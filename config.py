@@ -1,6 +1,3 @@
-import os
-
-
 class Config(object):
     DEBUG = False
     TESTING = False
@@ -9,7 +6,7 @@ class Config(object):
     SQLALCHEMY_TRACK_MODIFICATIONS = False
     SESSION_PERMANENT = False
     SESSION_TYPE = 'null'
-    BASE_URL = os.getenv('BASE_URL')
+    SERVER_NAME = 'http://127.0.0.1:5000'
 
 
 class ProductionConfig(Config):

@@ -1,9 +1,10 @@
 from flask import Flask
+from authlib.integrations.flask_client import OAuth
 
 
 def create_app():
     app = Flask(__name__)
-
+    app.secret_key = "sdfsdfsdfkjsdfhjkln435324tf"
     # setup with the configuration provided
     app.config.from_object('config.DevelopmentConfig')
 
@@ -15,6 +16,6 @@ def create_app():
 
     # register blueprint
     app.register_blueprint(auth)
-    app.register_blueprint(views)
+    # app.register_blueprint(views)
 
     return app
