@@ -11,11 +11,13 @@
 import os
 from authlib.integrations.flask_client import OAuth
 
-from flask import Blueprint, url_for, redirect, render_template
+from flask import Blueprint, url_for, redirect, render_template, session
 
-from ss.models import LoginForm
+from ss.models import LoginForm, SignupForm
 
 auth = Blueprint('auth', __name__, template_folder="templates/ss")
+
+
 # oauth = OAuth(app)
 #
 #
@@ -131,3 +133,21 @@ def login():
         password = form.password.data
 
     return render_template('auth/login.html', form=form)
+
+
+# Register
+@auth.route('/signup', methods=['GET', 'POST'])
+def signup():
+    form = SignupForm()
+    if form.validate_on_submit():
+        email = form.email.data
+        username = form.username.data
+        password = form.password.data
+
+    return render_template('auth/signup.html', form=form)
+
+
+@auth.route('/logout')
+def logout():
+    session.clear()
+    return redirect('auth.login')

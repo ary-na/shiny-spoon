@@ -32,3 +32,7 @@ https://softauthor.com/css-make-a-div-height-full-screen/
 https://mdbootstrap.com/docs/standard/layout/z-index/
 
 https://brandeps.com/logo/G/Google-2015-Favicon-01
+
+https://flask.palletsprojects.com/en/1.1.x/patterns/favicon/
+
+https://convertio.co
