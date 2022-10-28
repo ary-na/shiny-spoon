@@ -27,3 +27,8 @@ https://geekyhumans.com/how-to-implement-google-login-in-flask-app/
 https://www.geeksforgeeks.org/oauth-authentication-with-flask-connect-to-google-twitter-and-facebook/
 
 https://getbootstrap.com/docs/5.2/components/navbar/
+
+https://softauthor.com/css-make-a-div-height-full-screen/
+https://mdbootstrap.com/docs/standard/layout/z-index/
+
+https://brandeps.com/logo/G/Google-2015-Favicon-01
