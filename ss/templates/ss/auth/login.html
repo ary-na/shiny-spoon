@@ -3,16 +3,63 @@
 
 {% block content %}
 
-    dsffsdf
-    sdf
-    sdf<br />
-    sdf
-    sdf
-    sdfsdf
-    sdfsdfsdfsdf
-    <p>sdfsdf</p>
-    <p>sdfsdf</p>
-    <p>sdfsdf</p>
-    <p>sdfsdf</p>
+    <div class="login position-absolute bg-dark top-0 bottom-0 vh-100 vw-100 d-flex align-items-center justify-content-center">
+        <div class="container w-75 rounded">
+
+            <div class="row">
+                <div class="col align-self-center text-center">
+                    <img class="align-self-center text-center"
+                         src="{{ url_for('static', filename='img/logo/ss-logo-white.png') }}" width="100" height="100"
+                         alt="Shiny Spoon Logo">
+                    <h1 class="m-3">Welcome</h1>
+                    <h2 class="m-3">Shiny Spoon</h2>
+                </div>
+
+
+                <div class="col">
+                    <form class="p-2" action="" method="post">
+                        {{ form.csrf_token }}
+                        <div class="m-3">
+                            <div>{{ form.email.label(class_='form-label text-secondary') }}</div>
+                            <div>{{ form.email(class_='form-control', placeholder_='Enter your email') }}</div>
+                        </div>
+                        <div class="m-3">
+                            <div>{{ form.password.label(class_='form-label text-secondary') }} </div>
+                            <div>{{ form.password(class_='form-control', placeholder_='Enter your password') }}</div>
+                        </div>
+                        <div class="m-3">
+                            <span class="text-danger">
+                                {% with messages = get_flashed_messages() %}
+                                    {% if messages %}
+                                        {% for message in messages %}
+                                            {{ message }}
+                                        {% endfor %}
+                                    {% endif %}
+                                {% endwith %}
+                            </span>
+                        </div>
+                        <div class="my-3 p-3 d-grid col-6 mx-auto">
+                            {{ form.submit(class_='btn btn-outline-primary') }}
+                        </div>
+                        <div class="m-3 text-center">
+                            <span class="text-secondary">or login with</span>
+                        </div>
+                        <div class="m-3 d-flex gap-3 justify-content-center">
+                            <img class="align-self-center text-center"
+                                 src="{{ url_for('static', filename='img/logo/google.png') }}" width="30" height="30"
+                                 alt="Google Logo">
+                            <img class="align-self-center text-center"
+                                 src="{{ url_for('static', filename='img/logo/facebook.png') }}" width="30" height="30"
+                                 alt="Facebook Logo">
+                        </div>
+                        <div class="m-3 text-center text-secondary">Don't have an account?
+                            <a href="/register" class="text-decoration-none">Register</a>
+                        </div>
+                    </form>
+                </div>
+
+            </div>
+        </div>
+    </div>
 
 {% endblock %}

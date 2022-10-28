@@ -1,4 +1,13 @@
 body {
     padding-top: 8rem;
     background-color: #212529;
+    color: #ffffff;
+}
+
+.login {
+    z-index: 1070;
+}
+
+.register {
+    z-index: 1070;
 }

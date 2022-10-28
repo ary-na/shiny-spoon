@@ -6,7 +6,6 @@ class Config(object):
     SQLALCHEMY_TRACK_MODIFICATIONS = False
     SESSION_PERMANENT = False
     SESSION_TYPE = 'null'
-    SERVER_NAME = 'http://127.0.0.1:5000'
 
 
 class ProductionConfig(Config):

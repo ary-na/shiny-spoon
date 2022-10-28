@@ -11,42 +11,43 @@
 import os
 from authlib.integrations.flask_client import OAuth
 
-from flask import Blueprint, url_for, redirect
+from flask import Blueprint, url_for, redirect, render_template
 
-import ss
-
-app = create_app()
+from ss.models import LoginForm
 
 auth = Blueprint('auth', __name__, template_folder="templates/ss")
-oauth = OAuth(app)
-@auth.route('/facebook')
-def facebook():
-    # Facebook Oauth Config
-    FACEBOOK_CLIENT_ID = os.environ.get('FACEBOOK_CLIENT_ID')
-    FACEBOOK_CLIENT_SECRET = os.environ.get('FACEBOOK_CLIENT_SECRET')
-    oauth.register(
-        name='facebook',
-        client_id=FACEBOOK_CLIENT_ID,
-        client_secret=FACEBOOK_CLIENT_SECRET,
-        access_token_url='https://graph.facebook.com/oauth/access_token',
-        access_token_params=None,
-        authorize_url='https://www.facebook.com/dialog/oauth',
-        authorize_params=None,
-        api_base_url='https://graph.facebook.com/',
-        client_kwargs={'scope': 'email'},
-    )
-    redirect_uri = url_for('facebook_auth', _external=True)
-    return oauth.facebook.authorize_redirect(redirect_uri)
+# oauth = OAuth(app)
+#
+#
+# @auth.route('/facebook')
+# def facebook():
+#     # Facebook Oauth Config
+#     FACEBOOK_CLIENT_ID = os.environ.get('FACEBOOK_CLIENT_ID')
+#     FACEBOOK_CLIENT_SECRET = os.environ.get('FACEBOOK_CLIENT_SECRET')
+#     oauth.register(
+#         name='facebook',
+#         client_id=FACEBOOK_CLIENT_ID,
+#         client_secret=FACEBOOK_CLIENT_SECRET,
+#         access_token_url='https://graph.facebook.com/oauth/access_token',
+#         access_token_params=None,
+#         authorize_url='https://www.facebook.com/dialog/oauth',
+#         authorize_params=None,
+#         api_base_url='https://graph.facebook.com/',
+#         client_kwargs={'scope': 'email'},
+#     )
+#     redirect_uri = url_for('facebook_auth', _external=True)
+#     return oauth.facebook.authorize_redirect(redirect_uri)
+#
+#
+# @auth.route('/facebook/auth/')
+# def facebook_auth():
+#     token = oauth.facebook.authorize_access_token()
+#     resp = oauth.facebook.get(
+#         'https://graph.facebook.com/me?fields=id,name,email,picture{url}')
+#     profile = resp.json()
+#     print("Facebook User ", profile)
+#     return redirect('/')
 
-
-@auth.route('/facebook/auth/')
-def facebook_auth():
-    token = oauth.facebook.authorize_access_token()
-    resp = oauth.facebook.get(
-        'https://graph.facebook.com/me?fields=id,name,email,picture{url}')
-    profile = resp.json()
-    print("Facebook User ", profile)
-    return redirect('/')
 
 # os.environ['OAUTHLIB_INSECURE_TRANSPORT'] = '1'
 # GOOGLE_CLIENT_ID = '634070071675-7jodbchjja9bqhk767ivtsn8ms9eac54.apps.googleusercontent.com'
@@ -119,3 +120,14 @@ def facebook_auth():
 # @login_is_required
 # def protected_area():
 #     return f"Hello {session['name']}! <br/> <a href='/logout'><button>Logout</button></a>"  #the logout button
+
+
+# Login
+@auth.route('/login', methods=['GET', 'POST'])
+def login():
+    form = LoginForm()
+    if form.validate_on_submit():
+        email = form.email.data
+        password = form.password.data
+
+    return render_template('auth/login.html', form=form)
