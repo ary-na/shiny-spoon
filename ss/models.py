@@ -1,20 +1,21 @@
 import requests as requests
+from flask import session, redirect, url_for
 from flask_wtf import FlaskForm
-from wtforms import StringField, PasswordField, SubmitField
 from wtforms.validators import InputRequired
+from wtforms import StringField, PasswordField, SubmitField
 
 
 class Logins:
 
     def __init__(self):
-        self.url = 'http://127.0.0.1:8000/logins'
+        self.url = 'http://127.0.0.1:8000/logins/'
 
-    # async def post(self, user_name, email, password):
-    #     paras = {'user_name': user_name, 'email': email, 'password': password}
-    #     requests.post(self.url, data=paras)
+    def get_login(self, email):
+        return requests.get(self.url + email).json()
 
-    def get(self):
-        return requests.get(self.url + "/arian")
+    def add_login(self, email, username, password=''):
+        data = {'email': email, 'username': username, 'password': password}
+        requests.post(self.url + 'add-login', params=data)
 
 
 # Login form
@@ -30,3 +31,14 @@ class SignupForm(FlaskForm):
     username = StringField('Username', validators=[InputRequired()])
     password = PasswordField('Password', validators=[InputRequired()])
     submit = SubmitField('Get Started')
+
+
+# Login required
+def login_required(function):
+    def wrapper(*args, **kwargs):
+        if not session.get('email'):
+            return redirect(url_for('auth.login'))
+        else:
+            return function()
+
+    return wrapper
