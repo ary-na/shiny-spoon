@@ -36,3 +36,7 @@ https://brandeps.com/logo/G/Google-2015-Favicon-01
 https://flask.palletsprojects.com/en/1.1.x/patterns/favicon/
 
 https://convertio.co
+
+
+
+https://stackoverflow.com/questions/60524726/post-data-and-creating-rest-api-with-python-flask
