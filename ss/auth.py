@@ -7,39 +7,8 @@ from google.oauth2 import id_token
 from pip._vendor import cachecontrol
 from google_auth_oauthlib.flow import Flow
 from ss.models import LoginForm, SignupForm, Logins
+from rauth.service import OAuth2Service
 from flask import Blueprint, url_for, redirect, render_template, session, flash, abort, request
-
-# oauth = OAuth(app)
-#
-#
-# @auth.route('/facebook')
-# def facebook():
-#     # Facebook Oauth Config
-#     FACEBOOK_CLIENT_ID = os.environ.get('FACEBOOK_CLIENT_ID')
-#     FACEBOOK_CLIENT_SECRET = os.environ.get('FACEBOOK_CLIENT_SECRET')
-#     oauth.register(
-#         name='facebook',
-#         client_id=FACEBOOK_CLIENT_ID,
-#         client_secret=FACEBOOK_CLIENT_SECRET,
-#         access_token_url='https://graph.facebook.com/oauth/access_token',
-#         access_token_params=None,
-#         authorize_url='https://www.facebook.com/dialog/oauth',
-#         authorize_params=None,
-#         api_base_url='https://graph.facebook.com/',
-#         client_kwargs={'scope': 'email'},
-#     )
-#     redirect_uri = url_for('facebook_auth', _external=True)
-#     return oauth.facebook.authorize_redirect(redirect_uri)
-#
-#
-# @auth.route('/facebook/auth/')
-# def facebook_auth():
-#     token = oauth.facebook.authorize_access_token()
-#     resp = oauth.facebook.get(
-#         'https://graph.facebook.com/me?fields=id,name,email,picture{url}')
-#     profile = resp.json()
-#     print("Facebook User ", profile)
-#     return redirect('/')
 
 logins = Logins()
 auth = Blueprint('auth', __name__, template_folder='templates/ss')
@@ -50,6 +19,15 @@ flow = Flow.from_client_secrets_file(client_secrets_file=client_secrets_file,
                                              'openid'],
                                      redirect_uri='http://127.0.0.1:5000/callback'
                                      )
+
+# rauth OAuth 2.0 service wrapper
+graph_url = 'https://graph.facebook.com/'
+facebook = OAuth2Service(name='facebook',
+                         authorize_url='https://www.facebook.com/dialog/oauth',
+                         access_token_url=graph_url + 'oauth/access_token',
+                         client_id=os.environ.get('FACEBOOK_APP_ID'),
+                         client_secret=os.environ.get('FACEBOOK_APP_SECRET'),
+                         base_url=graph_url)
 
 
 # Login
@@ -126,6 +104,36 @@ def google_callback():
     session['email'] = id_info.get('email')
     session['username'] = id_info.get('name')
     return redirect(url_for('views.wrapper'))
+
+
+@auth.route('/facebook-login')
+def facebook_login():
+    redirect_uri = url_for('auth.authorized', _external=True)
+    params = {'redirect_uri': redirect_uri}
+    return redirect(facebook.get_authorize_url(**params))
+
+
+@auth.route('/facebook/authorized')
+def authorized():
+    # check to make sure the user authorized the request
+    if not 'code' in request.args:
+        flash('You did not authorize the request')
+        return redirect(url_for('views.index'))
+
+    # make a request for the access token credentials using code
+    redirect_uri = url_for('auth.authorized', _external=True)
+    data = dict(code=request.args['code'], redirect_uri=redirect_uri)
+
+    if facebook.get_auth_session(data=data):
+        session = facebook.get_auth_session(data=data)
+
+        # the "me" response
+        me = session.get('me').json()
+
+        print(me['username'], me['id'])
+
+        flash('Logged in as ' + me['name'])
+    return redirect(url_for('views.index'))
 
 
 # Logout
