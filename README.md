@@ -36,7 +36,17 @@ https://brandeps.com/logo/G/Google-2015-Favicon-01
 https://flask.palletsprojects.com/en/1.1.x/patterns/favicon/
 
 https://convertio.co
-
-
+https://www.sitepoint.com/use-ngrok-test-local-site/
+https://github.com/requests/requests-oauthlib/issues/288
 
 https://stackoverflow.com/questions/60524726/post-data-and-creating-rest-api-with-python-flask
+
+https://www.pinterest.com.au
+
+https://9to5answer.com/insecure-login-blocked-you-can-39-t-get-an-access-token-or-log-in-to-this-app-from-an-insecure-page-try-re-loading-the-page-as-https
+
+
+
+https://github.com/litl/rauth/blob/master/examples/facebook/facebook.py
+
+https://stackoverflow.com/questions/62351778/redirect-to-https-using-ngrok
