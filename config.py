@@ -6,7 +6,7 @@ class Config(object):
     SQLALCHEMY_TRACK_MODIFICATIONS = False
     SESSION_PERMANENT = False
     SESSION_TYPE = 'null'
-    SERVER_NAME = '4056-2001-8003-d883-d100-5487-d6e8-893e-efc6.au.ngrok.io'
+    # SERVER_NAME = '4056-2001-8003-d883-d100-5487-d6e8-893e-efc6.au.ngrok.io'
 
 
 class ProductionConfig(Config):
