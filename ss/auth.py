@@ -1,3 +1,4 @@
+import json
 import os
 import os.path
 import pathlib
@@ -5,9 +6,9 @@ import requests
 import google.auth.transport.requests
 from google.oauth2 import id_token
 from pip._vendor import cachecontrol
+from rauth.service import OAuth2Service
 from google_auth_oauthlib.flow import Flow
 from ss.models import LoginForm, SignupForm, Logins
-from rauth.service import OAuth2Service
 from flask import Blueprint, url_for, redirect, render_template, session, flash, abort, request
 
 logins = Logins()
@@ -106,34 +107,39 @@ def google_callback():
     return redirect(url_for('views.wrapper'))
 
 
+# Facebook login
 @auth.route('/facebook-login')
 def facebook_login():
-    redirect_uri = url_for('auth.authorized', _external=True)
+    redirect_uri = url_for('auth.facebook_callback', _external=True)
     params = {'redirect_uri': redirect_uri}
     return redirect(facebook.get_authorize_url(**params))
 
 
-@auth.route('/facebook/authorized')
-def authorized():
+# Facebook callback
+@auth.route('/facebook-callback')
+def facebook_callback():
     # check to make sure the user authorized the request
     if not 'code' in request.args:
         flash('You did not authorize the request')
-        return redirect(url_for('views.index'))
+        return redirect(url_for('views.wrapper'))
 
     # make a request for the access token credentials using code
-    redirect_uri = url_for('auth.authorized', _external=True)
-    data = dict(code=request.args['code'], redirect_uri=redirect_uri)
+    redirect_uri = url_for('auth.facebook_callback', _external=True)
+    data = dict(code=request.args['code'],
+                redirect_uri='https://4056-2001-8003-d883-d100-5487-d6e8-893e-efc6.au.ngrok.io/facebook-callback')
 
-    if facebook.get_auth_session(data=data):
-        session = facebook.get_auth_session(data=data)
+    fb_session = facebook.get_auth_session(data=data, decoder=json.loads)
 
-        # the "me" response
-        me = session.get('me').json()
+    # the "me" response
+    me = fb_session.get('me').json()
 
-        print(me['username'], me['id'])
+    user_exists = logins.get_login(me['id'])
+    if not user_exists:
+        logins.add_login(me['id'], me['name'])
 
-        flash('Logged in as ' + me['name'])
-    return redirect(url_for('views.index'))
+    session['email'] = me['id']
+    session['username'] = me['name']
+    return redirect(url_for('views.wrapper'))
 
 
 # Logout
