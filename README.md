@@ -47,6 +47,20 @@ https://9to5answer.com/insecure-login-blocked-you-can-39-t-get-an-access-token-o
 
 
 
+https://stackoverflow.com/questions/5707189/facebook-oauth-retrieve-user-email
+
+https://stackoverflow.com/questions/21203351/rauth2-decoder-failed-to-handle-access-token-when-i-tried-to-connect-with-box-co
+
+
+https://help.sharetribe.com/en/articles/1317484-facebook-error-can-t-load-url-the-domain-of-this-url-isn-t-included-in-the-app-s-domains
+
+
+
 https://github.com/litl/rauth/blob/master/examples/facebook/facebook.py
 
 https://stackoverflow.com/questions/62351778/redirect-to-https-using-ngrok
+
+
+
+https://github.com/litl/rauth/blob/master/examples/facebook/facebook.py
+https://github.com/litl/rauth/blob/master/examples/facebook/facebook.py
