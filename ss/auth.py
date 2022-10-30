@@ -1,5 +1,5 @@
-import json
 import os
+import json
 import os.path
 import pathlib
 import requests
@@ -14,6 +14,8 @@ from flask import Blueprint, url_for, redirect, render_template, session, flash,
 logins = Logins()
 auth = Blueprint('auth', __name__, template_folder='templates/ss')
 client_secrets_file = os.path.join(pathlib.Path(__file__).parent, '../shiny_spoon_google_client.json')
+
+# Google service wrapper
 flow = Flow.from_client_secrets_file(client_secrets_file=client_secrets_file,
                                      scopes=['https://www.googleapis.com/auth/userinfo.profile',
                                              'https://www.googleapis.com/auth/userinfo.email',
@@ -21,7 +23,7 @@ flow = Flow.from_client_secrets_file(client_secrets_file=client_secrets_file,
                                      redirect_uri='http://127.0.0.1:5000/callback'
                                      )
 
-# rauth OAuth 2.0 service wrapper
+# Facebook service wrapper
 graph_url = 'https://graph.facebook.com/'
 facebook = OAuth2Service(name='facebook',
                          authorize_url='https://www.facebook.com/dialog/oauth',
@@ -118,27 +120,23 @@ def facebook_login():
 # Facebook callback
 @auth.route('/facebook-callback')
 def facebook_callback():
-    # check to make sure the user authorized the request
-    if not 'code' in request.args:
-        flash('You did not authorize the request')
+    if 'code' in request.args:
+        redirect_uri = url_for('auth.facebook_callback', _external=True)
+        data = dict(code=request.args['code'], redirect_uri=redirect_uri)
+
+        fb_session = facebook.get_auth_session(data=data, decoder=json.loads)
+
+        me = fb_session.get('me').json()  # the "me" response
+
+        user_exists = logins.get_login(me['id'])
+        if not user_exists:
+            logins.add_login(me['id'], me['name'])
+
+        session['email'] = me['id']
+        session['username'] = me['name']
         return redirect(url_for('views.wrapper'))
 
-    # make a request for the access token credentials using code
-    redirect_uri = url_for('auth.facebook_callback', _external=True)
-    data = dict(code=request.args['code'],
-                redirect_uri='https://4056-2001-8003-d883-d100-5487-d6e8-893e-efc6.au.ngrok.io/facebook-callback')
-
-    fb_session = facebook.get_auth_session(data=data, decoder=json.loads)
-
-    # the "me" response
-    me = fb_session.get('me').json()
-
-    user_exists = logins.get_login(me['id'])
-    if not user_exists:
-        logins.add_login(me['id'], me['name'])
-
-    session['email'] = me['id']
-    session['username'] = me['name']
+    flash('You did not authorize the request')
     return redirect(url_for('views.wrapper'))
 
 
