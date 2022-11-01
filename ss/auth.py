@@ -52,7 +52,7 @@ def login():
     return render_template('auth/login.html', form=form)
 
 
-# Register
+# Sign up
 @auth.route('/signup', methods=['GET', 'POST'])
 def signup():
     form = SignupForm()
