@@ -13,8 +13,8 @@
 
 <body>
 
-<nav class="navbar mx-4 mt-4 navbar-dark navbar-expand-lg bg-dark">
-    <div class="container-fluid">
+<nav class="navbar py-5 navbar-dark navbar-expand-lg bg-dark">
+    <div class="container">
         <a class="navbar-brand" href="/"><img src="{{ url_for('static', filename='img/logo/ss-logo-white.png') }}"
                                               alt="Shiny Spoon Logo" width="60" height="60"></a>
         <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarSupportedContent"
@@ -38,7 +38,7 @@
     </div>
 </nav>
 
-<main class="container-fluid py-5">
+<main>
     {% block content %}
     {% endblock %}
 </main>
