@@ -28,6 +28,8 @@ https://www.geeksforgeeks.org/oauth-authentication-with-flask-connect-to-google-
 
 https://getbootstrap.com/docs/5.2/components/navbar/
 
+https://getbootstrap.com/docs/5.1/examples/footers/
+
 https://softauthor.com/css-make-a-div-height-full-screen/
 https://mdbootstrap.com/docs/standard/layout/z-index/
 
@@ -64,3 +66,7 @@ https://stackoverflow.com/questions/62351778/redirect-to-https-using-ngrok
 
 https://github.com/litl/rauth/blob/master/examples/facebook/facebook.py
 https://github.com/litl/rauth/blob/master/examples/facebook/facebook.py
+
+
+https://www.pinterest.com.au/pin/160300067978024618/
+https://stackoverflow.com/questions/48391369/two-column-layout-with-one-fixed-and-one-scroll
