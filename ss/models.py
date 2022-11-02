@@ -1,21 +1,59 @@
 import requests as requests
-from flask import session, redirect, url_for
 from flask_wtf import FlaskForm
+from flask import session, redirect, url_for
 from wtforms.validators import InputRequired
 from wtforms import StringField, PasswordField, SubmitField
 
 
+# Logins
 class Logins:
 
     def __init__(self):
         self.url = 'http://127.0.0.1:8000/logins/'
 
-    def get_login(self, email):
-        return requests.get(self.url + email).json()
-
+    # Create login
     def add_login(self, email, username, password=''):
         data = {'email': email, 'username': username, 'password': password}
         requests.post(self.url + 'add-login', params=data)
+
+    # Read login
+    def get_login(self, email):
+        return requests.get(self.url + email).json()
+
+    # Update login
+    def update_login(self):
+        data = {}
+        return requests.put(self.url + 'update-login', params=data)
+
+    # Delete login
+    def delete_login(self, email):
+        data = {}
+        return requests.delete(self.url + 'update-login', params=data)
+
+
+# Posts
+class Posts:
+    def __int__(self):
+        self.url = 'http://127.0.0.1:8000/posts/'
+
+    # Create post
+    def add_post(self, email, username, password=''):
+        data = {'email': email, 'username': username, 'password': password}
+        requests.post(self.url + 'add-post', params=data)
+
+    # Read post
+    def get_post(self, email):
+        return requests.get(self.url + email).json()
+
+    # Update post
+    def update_post(self):
+        data = {}
+        return requests.put(self.url + 'update-post', params=data)
+
+    # Delete post
+    def delete_post(self, email):
+        data = {}
+        return requests.delete(self.url + 'update-post', params=data)
 
 
 # Login form
