@@ -45,7 +45,7 @@ def login():
         if user and user[0]['password'] == password:
             session['email'] = user[0]['email']
             session['username'] = user[0]['username']
-            return redirect(url_for('views.wrapper'))
+            return redirect(url_for('views.index'))
         else:
             flash('Email or password is invalid')
 
@@ -66,7 +66,7 @@ def signup():
             logins.add_login(email, username, password)
             session['email'] = email
             session['username'] = username
-            return redirect(url_for('views.wrapper'))
+            return redirect(url_for('views.index'))
         else:
             flash('The email already exists')
 
@@ -106,7 +106,7 @@ def google_callback():
 
     session['email'] = id_info.get('email')
     session['username'] = id_info.get('name')
-    return redirect(url_for('views.wrapper'))
+    return redirect(url_for('views.index'))
 
 
 # Facebook login
@@ -134,10 +134,10 @@ def facebook_callback():
 
         session['email'] = me['id']
         session['username'] = me['name']
-        return redirect(url_for('views.wrapper'))
+        return redirect(url_for('views.index'))
 
     flash('You did not authorize the request')
-    return redirect(url_for('views.wrapper'))
+    return redirect(url_for('views.index'))
 
 
 # Logout

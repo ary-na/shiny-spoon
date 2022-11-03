@@ -1,4 +1,18 @@
-from flask import Flask
+from functools import wraps
+
+from flask import Flask, session, redirect, url_for
+
+
+# Login required
+def login_required(f):
+    @wraps(f)
+    def wrap(*args, **kwargs):
+        if not session.get('email'):
+            return redirect(url_for('auth.login'))
+        else:
+            return f(*args, **kwargs)
+
+    return wrap
 
 
 def create_app():

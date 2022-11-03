@@ -1,15 +1,18 @@
 from flask import Blueprint, render_template
 
-from ss.models import login_required
+from ss import login_required
+from ss.models import Weather
 
 views = Blueprint('views', __name__, template_folder="templates/ss")
+weather = Weather()
 
 
 # Home
 @views.route('/')
 @login_required
 def index():
-    return render_template('index.html')
+    # weather_data = weather.get_data()
+    return render_template('index.html', weather_condition="weather_data['days'][0]['description']")
 
 
 # Update account

@@ -1,3 +1,5 @@
+import os
+
 import requests as requests
 from flask_wtf import FlaskForm
 from flask import session, redirect, url_for
@@ -56,6 +58,18 @@ class Posts:
         return requests.delete(self.url + 'update-post', params=data)
 
 
+# Weather
+class Weather:
+
+    def __init__(self):
+        self.key = "update the key later"
+        self.url = 'https://weather.visualcrossing.com/VisualCrossingWebServices/rest/services/timeline/Melbourne' \
+                   '/today?unitGroup=us&include=days&key=' + self.key + '&contentType=json'
+
+    def get_data(self):
+        return requests.get(self.url).json()
+
+
 # Login form
 class LoginForm(FlaskForm):
     email = StringField('Email', validators=[InputRequired()])
@@ -69,14 +83,3 @@ class SignupForm(FlaskForm):
     username = StringField('Username', validators=[InputRequired()])
     password = PasswordField('Password', validators=[InputRequired()])
     submit = SubmitField('Get Started')
-
-
-# Login required
-def login_required(function):
-    def wrapper(*args, **kwargs):
-        if not session.get('email'):
-            return redirect(url_for('auth.login'))
-        else:
-            return function()
-
-    return wrapper
