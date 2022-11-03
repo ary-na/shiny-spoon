@@ -21,6 +21,11 @@ https://stackoverflow.com/questions/56466255/why-isnt-my-flask-website-running-c
 https://stackoverflow.com/questions/10336194/top-nav-bar-blocking-top-content-of-the-page?answertab=votes#tab-top
 
 
+
+https://pythonprogramming.net/decorator-wrappers-flask-tutorial-login-required/
+
+
+
 https://geekyhumans.com/how-to-implement-google-login-in-flask-app/
 https://geekyhumans.com/how-to-implement-google-login-in-flask-app/
 
