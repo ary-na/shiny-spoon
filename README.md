@@ -26,6 +26,10 @@ https://pythonprogramming.net/decorator-wrappers-flask-tutorial-login-required/
 
 
 
+https://www.visualcrossing.com
+
+
+
 https://geekyhumans.com/how-to-implement-google-login-in-flask-app/
 https://geekyhumans.com/how-to-implement-google-login-in-flask-app/
 
