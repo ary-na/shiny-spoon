@@ -1,10 +1,16 @@
-from flask import Blueprint, render_template
+import uuid
+
+from flask import Blueprint, render_template, request, session, redirect, url_for
 
 from ss import login_required
-from ss.models import Weather
+from ss.models import Weather, CreatePostForm, Utilities, Posts
 
-views = Blueprint('views', __name__, template_folder="templates/ss")
+posts = Posts()
 weather = Weather()
+utilities = Utilities()
+post_images_folder = 'post-images/'
+user_images_folder = 'user-images/'
+views = Blueprint('views', __name__, template_folder="templates/ss")
 
 
 # Home
@@ -30,10 +36,23 @@ def delete_account():
 
 
 # Create post
-@views.route('/create-post')
+@views.route('/create-post', methods=['GET', 'POST'])
 @login_required
 def create_post():
-    return render_template('post/create.html')
+    form = CreatePostForm()
+    if form.validate_on_submit():
+        post_id = str(uuid.uuid4())
+        description = form.description.data
+        image = request.files['image']
+        post_image_key = ''
+        if image:
+            post_image_key = post_id + image.filename
+            utilities.upload_img(image, post_image_key, post_images_folder)
+
+        posts.add_post(session.get('email'), post_id, description, post_image_key)
+        return redirect(url_for('views.index'))
+
+    return render_template('post/create.html', form=form)
 
 
 # Update post

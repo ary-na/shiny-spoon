@@ -1,10 +1,8 @@
-import os
-
+import uuid
 import requests as requests
 from flask_wtf import FlaskForm
-from flask import session, redirect, url_for
 from wtforms.validators import InputRequired
-from wtforms import StringField, PasswordField, SubmitField
+from wtforms import StringField, PasswordField, SubmitField, TextAreaField, FileField
 
 
 # Logins
@@ -35,12 +33,12 @@ class Logins:
 
 # Posts
 class Posts:
-    def __int__(self):
+    def __init__(self):
         self.url = 'http://127.0.0.1:8000/posts/'
 
     # Create post
-    def add_post(self, email, username, password=''):
-        data = {'email': email, 'username': username, 'password': password}
+    def add_post(self, email, post_id, description, post_img_key):
+        data = {'email': email, 'post_id': post_id, 'description': description, 'post_img_key': post_img_key}
         requests.post(self.url + 'add-post', params=data)
 
     # Read post
@@ -70,6 +68,18 @@ class Weather:
         return requests.get(self.url).json()
 
 
+# Utilities
+class Utilities:
+
+    def __init__(self):
+        self.url = 'http://127.0.0.1:8000/utilities/upload-img'
+
+    def upload_img(self, img_file, object_key, folder_name):
+        data = {'object_key': object_key, 'folder_name': folder_name}
+        image = {'img_file': img_file}
+        requests.post(self.url, params=data, files=image)
+
+
 # Login form
 class LoginForm(FlaskForm):
     email = StringField('Email', validators=[InputRequired()])
@@ -83,3 +93,10 @@ class SignupForm(FlaskForm):
     username = StringField('Username', validators=[InputRequired()])
     password = PasswordField('Password', validators=[InputRequired()])
     submit = SubmitField('Get Started')
+
+
+# Create post form
+class CreatePostForm(FlaskForm):
+    description = TextAreaField('Description', validators=[InputRequired()])
+    image = FileField('Add Image')
+    submit = SubmitField('Create')
