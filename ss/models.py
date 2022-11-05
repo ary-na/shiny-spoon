@@ -1,4 +1,3 @@
-import uuid
 import requests as requests
 from flask_wtf import FlaskForm
 from wtforms.validators import InputRequired
@@ -37,8 +36,8 @@ class Posts:
         self.url = 'http://127.0.0.1:8000/posts/'
 
     # Create post
-    def add_post(self, email, post_id, description, post_img_key):
-        data = {'email': email, 'post_id': post_id, 'description': description, 'post_img_key': post_img_key}
+    def add_post(self, email, description, post_img_key):
+        data = {'email': email, 'description': description, 'post_img_key': post_img_key}
         requests.post(self.url + 'add-post', params=data)
 
     # Read post
@@ -54,6 +53,9 @@ class Posts:
     def delete_post(self, email):
         data = {}
         return requests.delete(self.url + 'update-post', params=data)
+
+    def get_posts(self):
+        return requests.get(self.url).json()
 
 
 # Weather
@@ -72,12 +74,17 @@ class Weather:
 class Utilities:
 
     def __init__(self):
-        self.url = 'http://127.0.0.1:8000/utilities/upload-img'
+        self.url = 'http://127.0.0.1:8000/utilities/'
 
+    # Upload image
     def upload_img(self, img_file, object_key, folder_name):
         data = {'object_key': object_key, 'folder_name': folder_name}
         image = {'img_file': img_file}
-        requests.post(self.url, params=data, files=image)
+        requests.post(self.url + 'upload-img', params=data, files=image)
+
+    # Get pre-signed url
+    def get_pre_signed_url(self, object_key):
+        return requests.get(self.url + object_key)
 
 
 # Login form
