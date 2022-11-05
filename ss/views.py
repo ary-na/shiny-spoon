@@ -18,7 +18,10 @@ views = Blueprint('views', __name__, template_folder="templates/ss")
 @login_required
 def index():
     # weather_data = weather.get_data()
-    return render_template('index.html', weather_condition="weather_data['days'][0]['description']")
+    latest_posts = posts.get_posts()
+
+    return render_template('index.html', weather_condition="weather_data['days'][0]['description']", posts=latest_posts,
+                           get_pre_signed_url=utilities.get_pre_signed_url)
 
 
 # Update account
@@ -40,16 +43,17 @@ def delete_account():
 @login_required
 def create_post():
     form = CreatePostForm()
+
     if form.validate_on_submit():
-        post_id = str(uuid.uuid4())
         description = form.description.data
         image = request.files['image']
         post_image_key = ''
+
         if image:
-            post_image_key = post_id + image.filename
+            post_image_key = str(uuid.uuid4()) + image.filename
             utilities.upload_img(image, post_image_key, post_images_folder)
 
-        posts.add_post(session.get('email'), post_id, description, post_image_key)
+        posts.add_post(session.get('email'), description, post_image_key)
         return redirect(url_for('views.index'))
 
     return render_template('post/create.html', form=form)
