@@ -7,21 +7,28 @@
 
             <div class="col-8 align-self-start">
                 <div class="d-flex pb-3 justify-content-between align-items-center border-bottom border-secondary">
-                    <small class="text-muted">Today, Melbourne is <span class="text-lowercase">{{ weather_condition }}</span></small>
+                    <small class="text-muted">Today, Melbourne is <span
+                            class="text-lowercase">{{ weather_condition }}</span></small>
                     <a href="{{ url_for('views.create_post') }}" class="btn btn-sm btn-primary">Create a Post</a>
                 </div>
 
                 <div class="container-fluid d-flex py-5 flex-column">
 
-                    {# Posts #}
-                    <div class="card text-bg-dark mb-4 border-secondary">
-                        <div class="card-header border-secondary">Test username</div>
-                        <div class="card-body">
-                            <h5 class="card-title">Test title</h5>
-                            <p class="card-text">Test content.</p>
-                        </div>
+                    {% if not posts %}
+                        <div class="text-muted text-center"><h3 class="display-3">Hmm, seems quite here...</h3></div>
+                    {% else %}
+                        {% for post in posts %}
+                            {# Posts #}
+                            <div class="card text-bg-dark mb-4 border-secondary">
+                                <div class="card-header border-secondary">Test username</div>
+                                <div class="card-body">
+                                    <h5 class="card-title">Test title</h5>
+                                    <p class="card-text">Test content.</p>
+                                </div>
+                            </div>
+                        {% endfor %}
+                    {% endif %}
 
-                    </div>
                 </div>
             </div>
 
