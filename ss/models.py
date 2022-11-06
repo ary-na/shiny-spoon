@@ -12,7 +12,8 @@ class Logins:
 
     # Create login
     def add_login(self, email, username, password=''):
-        data = {'email': email, 'username': username, 'password': password}
+        data = {'email': email, 'username': username, 'password': password, 'img_key': 'default-user-profile-img'
+                                                                                       '-white.png'}
         requests.post(self.url + 'add-login', params=data)
 
     # Read login
@@ -76,15 +77,25 @@ class Utilities:
     def __init__(self):
         self.url = 'http://127.0.0.1:8000/utilities/'
 
-    # Upload image
-    def upload_img(self, img_file, object_key, folder_name):
-        data = {'object_key': object_key, 'folder_name': folder_name}
+    # Upload profile image
+    def upload_profile_img(self, img_file, object_key):
+        data = {'object_key': object_key}
         image = {'img_file': img_file}
-        requests.post(self.url + 'upload-img', params=data, files=image)
+        requests.post(self.url + 'upload-profile-img', params=data, files=image)
 
-    # Get pre-signed url
-    def get_pre_signed_url(self, object_key):
-        return requests.get(self.url + object_key)
+    # Upload post image
+    def upload_post_img(self, img_file, object_key):
+        data = {'object_key': object_key}
+        image = {'img_file': img_file}
+        requests.post(self.url + 'upload-post-img', params=data, files=image)
+
+    # Get pre-signed url profile image
+    def get_pre_signed_url_profile_img(self, object_key):
+        return requests.get(self.url + 'profile-img/' + object_key).json()
+
+    # Get pre-signed url post image
+    def get_pre_signed_url_post_img(self, object_key):
+        return requests.get(self.url + 'post-img/' + object_key).json()
 
 
 # Login form

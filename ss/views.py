@@ -3,13 +3,12 @@ import uuid
 from flask import Blueprint, render_template, request, session, redirect, url_for
 
 from ss import login_required
-from ss.models import Weather, CreatePostForm, Utilities, Posts
+from ss.models import Weather, CreatePostForm, Utilities, Posts, Logins
 
 posts = Posts()
+logins = Logins()
 weather = Weather()
 utilities = Utilities()
-post_images_folder = 'post-images/'
-user_images_folder = 'user-images/'
 views = Blueprint('views', __name__, template_folder="templates/ss")
 
 
@@ -18,10 +17,15 @@ views = Blueprint('views', __name__, template_folder="templates/ss")
 @login_required
 def index():
     # weather_data = weather.get_data()
+    user = logins.get_login(session['email'])
     latest_posts = posts.get_posts()
 
-    return render_template('index.html', weather_condition="weather_data['days'][0]['description']", posts=latest_posts,
-                           get_pre_signed_url=utilities.get_pre_signed_url)
+    return render_template('index.html',
+                           user=user[0],
+                           posts=latest_posts,
+                           weather_condition="weather_data['days'][0]['description']",
+                           get_pre_signed_url_profile_img=utilities.get_pre_signed_url_profile_img,
+                           get_pre_signed_url_post_img=utilities.get_pre_signed_url_post_img)
 
 
 # Update account
@@ -51,7 +55,7 @@ def create_post():
 
         if image:
             post_image_key = str(uuid.uuid4()) + image.filename
-            utilities.upload_img(image, post_image_key, post_images_folder)
+            utilities.upload_post_img(image, post_image_key)
 
         posts.add_post(session.get('email'), description, post_image_key)
         return redirect(url_for('views.index'))
