@@ -39,14 +39,21 @@
                             {# Posts #}
                             <div class="card text-bg-dark mb-4 shadow">
                                 <div class="card-body py-sm-4 d-flex flex-column gap-4">
-                                    <div class="container-fluid d-flex flex-row gap-3 justify-content-center align-items-center align-content-center">
-                                        <img src="{{ url_for('static', filename='img/user/default-user-profile-img-white.png') }}"
-                                             width="60" height="60" alt="User Profile Image"/>
-                                        <div class="container-fluid d-flex flex-column justify-content-between">
-                                            <h5>{{ user['username'] }}</h5>
-                                            <small class="text-muted">{{ post['date_time_utc'] }}</small>
+                                    {# Post header #}
+                                    <div class="container-fluid d-flex justify-content-between align-items-center align-content-center">
+                                        <div class="d-flex flex-row gap-3 justify-content-start align-items-center align-content-center">
+                                            <img src="{{ url_for('static', filename='img/user/default-user-profile-img-white.png') }}"
+                                                 width="60" height="60" alt="User Profile Image"/>
+                                            <div class="d-flex flex-column justify-content-between">
+                                                <h5>{{ user['username'] }}</h5>
+                                                <small class="text-muted">{{ post['date_time_utc'] }}</small>
+                                            </div>
                                         </div>
+                                            <a class="btn btn-sm btn-outline-danger rounded"><small>Delete</small></a>
+
                                     </div>
+
+                                    {# Post body #}
                                     <div class="container-fluid d-flex flex-column gap-3">
                                         <p class="card-text">{{ post['description'] }}</p>
                                         {% if post['img_key'] %}
