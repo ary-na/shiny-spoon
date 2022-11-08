@@ -55,6 +55,9 @@ class Posts:
         data = {}
         return requests.delete(self.url + 'update-post', params=data)
 
+    def get_user_posts(self, email):
+        return requests.get(self.url + email).json()
+
     def get_posts(self):
         return requests.get(self.url).json()
 

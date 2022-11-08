@@ -6,7 +6,7 @@
         <div class="row">
 
             <div class="col-8 align-self-start">
-                <div class="d-flex pb-3 justify-content-between align-items-center border-bottom border-secondary">
+                <div class="d-flex pb-3 justify-content-between align-items-center border-bottom border-secondary border-opacity-50">
                     <small class="text-muted">Today, Melbourne is <span
                             class="text-lowercase">{{ weather_condition }}</span></small>
                     <a href="{{ url_for('views.create_post') }}" class="btn btn-sm btn-primary">Create a Post</a>
@@ -20,7 +20,7 @@
                         {% for post in posts %}
 
                             {# Posts #}
-                            <div class="card text-bg-dark mb-4 border-secondary">
+                            <div class="card text-bg-dark mb-4 shadow">
                                 <div class="card-body py-sm-4 d-flex flex-column gap-4">
                                     <div class="container-fluid d-flex flex-row gap-3 justify-content-center align-items-center align-content-center">
                                         <img src="{{ url_for('static', filename='img/user/default-user-profile-img-white.png') }}"
@@ -57,11 +57,8 @@
                         </h3>
                     </div>
                     <div class="d-flex flex-column gap-3 justify-content-center align-items-center text-center">
-                        <small class="text-muted text-">Proceed with caution :d</small>
-                        <div class="d-flex gap-2">
-                            <button type="button" class="btn btn-sm btn-warning">Update Account</button>
-                            <button type="button" class="btn btn-sm btn-danger">Delete Account</button>
-                        </div>
+                        <small class="text-muted">View your account and have fun :/</small>
+                        <a href="{{ url_for('views.user_account') }}" class="btn btn-sm btn-outline-secondary">User Account</a>
                     </div>
                 </div>
             </div>
