@@ -1,0 +1,86 @@
+{% extends "base.html" %}
+{% block title %}Shiny Spoon - User Account{% endblock %}
+
+{% block content %}
+
+    <div class="container">
+        <div class="row">
+            <div class="col">
+                {# User account #}
+                <div class="pb-5 container-fluid d-flex justify-content-around align-content-center align-items-center gap-5 border-bottom border-secondary border-opacity-50">
+                    <div class="gap-5 d-flex align-content-center align-items-center">
+                        <img class="rounded-circle"
+                             src="{{ get_pre_signed_url_profile_img(user['img_key']) }}"
+                             alt="User Profile Image" width="200" height="200">
+                        <div class="d-flex flex-column gap-3">
+                            <h6 class="display-6 text-capitalize"><small
+                                    class="text-muted">Hey, </small>{{ user['username'] }}</h6>
+                            <small class="text-muted">This is your profile, take a moment and relax :)</small>
+                            <div class="d-flex gap-3">
+                                <a href="/update-account" class="btn btn-sm btn-warning">Update Account</a>
+                                <a href="/delete-account" class="btn btn-sm btn-danger">Delete Account</a>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+
+
+        <div class="row">
+            <div class="col-8 align-self-start">
+                <div class="container-fluid d-flex py-5 flex-column">
+
+                    {% if not posts %}
+                        <div class="text-muted text-center"><h3 class="display-3">Hmm, seems quite here...</h3></div>
+                    {% else %}
+                        {% for post in posts %}
+
+                            {# Posts #}
+                            <div class="card text-bg-dark mb-4 shadow">
+                                <div class="card-body py-sm-4 d-flex flex-column gap-4">
+                                    <div class="container-fluid d-flex flex-row gap-3 justify-content-center align-items-center align-content-center">
+                                        <img src="{{ url_for('static', filename='img/user/default-user-profile-img-white.png') }}"
+                                             width="60" height="60" alt="User Profile Image"/>
+                                        <div class="container-fluid d-flex flex-column justify-content-between">
+                                            <h5>{{ user['username'] }}</h5>
+                                            <small class="text-muted">{{ post['date_time_utc'] }}</small>
+                                        </div>
+                                    </div>
+                                    <div class="container-fluid d-flex flex-column gap-3">
+                                        <p class="card-text">{{ post['description'] }}</p>
+                                        {% if post['img_key'] %}
+                                            <img class="align-self-center w-100 rounded"
+                                                 src="{{ get_pre_signed_url_post_img(post['img_key']) }}"
+                                                 alt="Post Image"/>
+                                        {% endif %}
+                                    </div>
+                                </div>
+                            </div>
+
+                        {% endfor %}
+                    {% endif %}
+
+                </div>
+            </div>
+
+            <div class="position-sticky top-0 py-5 col-4 align-self-start">
+                <div class="container d-flex gap-3 flex-column">
+                    <figure class="text-end">
+                        <blockquote class="blockquote">
+                            <p>To live is the rarest thing in the world. Most people exist, that is all.</p>
+                        </blockquote>
+                        <figcaption class="blockquote-footer">
+                            <cite title="Oscar Wilde">Oscar Wilde</cite>
+                        </figcaption>
+                    </figure>
+                    <div class="text-center text-muted"><small>...</small></div>
+                    <small class="text-muted text-center">Do you want to go home?
+                        <a href="/" class="link-primary text-decoration-none">Home</a>
+                    </small>
+                </div>
+            </div>
+        </div>
+    </div>
+
+{% endblock %}

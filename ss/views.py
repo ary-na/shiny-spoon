@@ -28,6 +28,19 @@ def index():
                            get_pre_signed_url_post_img=utilities.get_pre_signed_url_post_img)
 
 
+# User account
+@views.route('/user-account')
+@login_required
+def user_account():
+    user = logins.get_login(session['email'])
+    user_posts = posts.get_user_posts(user[0]['email'])
+    return render_template('account/user.html',
+                           user=user[0],
+                           posts=user_posts,
+                           get_pre_signed_url_profile_img=utilities.get_pre_signed_url_profile_img,
+                           get_pre_signed_url_post_img=utilities.get_pre_signed_url_post_img)
+
+
 # Update account
 @views.route('/update-account')
 @login_required
