@@ -81,6 +81,11 @@ https://www.pinterest.com.au/pin/160300067978024618/
 https://stackoverflow.com/questions/48391369/two-column-layout-with-one-fixed-and-one-scroll
 
 
+https://www.pinterest.com.au
+
+https://www.goodreads.com/quotes
+
+
 
 
 https://stackoverflow.com/questions/534839/how-to-create-a-guid-uuid-in-python
