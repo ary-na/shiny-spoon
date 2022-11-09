@@ -86,3 +86,14 @@ https://www.pinterest.com.au
 https://www.goodreads.com/quotes
 
 https://stackoverflow.com/questions/534839/how-to-create-a-guid-uuid-in-python
+
+[31] R. Simon, "Change color of flask.flash messages", Stack Overflow, 2022. [Online]. Available: <https://stackoverflow.com/questions/44569040/change-color-of-flask-flash-messages>. [Accessed: 29-Sep-2022].
+
+
+
+
+https://stackoverflow.com/questions/20689195/flask-error-method-not-allowed-the-method-is-not-allowed-for-the-requested-url
+
+https://stackoverflow.com/questions/20689195/flask-error-method-not-allowed-the-method-is-not-allowed-for-the-requested-url
+
+
