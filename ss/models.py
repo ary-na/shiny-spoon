@@ -23,15 +23,20 @@ class Logins:
     def get_login(self, email):
         return requests.get(self.url + email).json()
 
-    # Update login
-    def update_login(self):
-        data = {}
-        return requests.put(self.url + 'update-login', params=data)
+    # Update login password
+    def update_login_password(self, email, username, new_password):
+        data = {'email': email, 'username': username, 'password': new_password}
+        requests.put(self.url + 'update-login-password', params=data)
+
+    # Update login profile image
+    def update_login_profile_image(self, email, username, new_img_key):
+        data = {'email': email, 'username': username, 'img_key': new_img_key}
+        requests.put(self.url + 'update-login-profile-image', params=data)
 
     # Delete login
-    def delete_login(self, email):
-        data = {}
-        return requests.delete(self.url + 'update-login', params=data)
+    def delete_login(self, email, username):
+        data = {'email': email, 'username': username}
+        return requests.delete(self.url + 'delete-login', params=data)
 
 
 # Posts
@@ -40,18 +45,19 @@ class Posts:
         self.url = 'http://127.0.0.1:8000/posts/'
 
     # Create post
-    def add_post(self, email, description, post_img_key):
-        data = {'email': email, 'description': description, 'post_img_key': post_img_key}
+    def add_post(self, email, username, user_profile_img_key, description, post_img_key):
+        data = {'email': email, 'username': username, 'user_profile_img_key': user_profile_img_key,
+                'description': description, 'post_img_key': post_img_key}
         requests.post(self.url + 'add-post', params=data)
 
     # Read post
     def get_post(self, email):
         return requests.get(self.url + email).json()
 
-    # Update post
-    def update_post(self):
-        data = {}
-        return requests.put(self.url + 'update-post', params=data)
+    # Update post active state
+    def update_post_active_state(self, email, date_time_utc):
+        data = {'email': email, 'date_time_utc': date_time_utc}
+        return requests.put(self.url + 'update-post-active-state', params=data)
 
     # Delete post
     def delete_post(self, email):
@@ -126,17 +132,17 @@ class CreatePostForm(FlaskForm):
     submit = SubmitField('Create')
 
 
-# Change password form
-class ChangePasswordForm(FlaskForm):
-    old_password = PasswordField('Old Password', validators=[InputRequired()])
-    new_password = PasswordField('New Password', validators=[InputRequired()])
-    submit = SubmitField('Submit')
-
-
-# Update profile image form
-class UpdateProfileImageForm(FlaskForm):
-    image = FileField('Add Image', validators=[InputRequired()])
+# Update Account form
+class UpdateAccountForm(FlaskForm):
+    old_password = PasswordField('Old Password')
+    new_password = PasswordField('New Password')
+    image = FileField('Update Image')
     submit = SubmitField('Update')
+
+
+# Delete Account form
+class DeleteAccountForm(FlaskForm):
+    submit = SubmitField('Delete Account')
 
 
 # Convert date time utc to local time

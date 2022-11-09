@@ -3,23 +3,22 @@
 
 {% block content %}
 
-
     <div class="hide-all position-absolute bg-dark top-0 bottom-0 vh-100 vw-100 d-flex align-items-center justify-content-center">
         <div class="container w-50">
-                    <form class="p-2" action="" method="post" enctype="multipart/form-data">
-                        {{ form.csrf_token }}
-                        <div class="m-3 text-center"><h1 class="display-1">Create a Post</h1></div>
-                        <br/>
-                        <div class="m-3">
-                            <div>{{ form.description.label(class_='form-label text-secondary') }}</div>
-                            <div>{{ form.description(class_='form-control', placeholder_='Write something...') }}</div>
-                        </div>
-                        <div class="m-3">
-                            <div>{{ form.image.label(class_='form-label text-secondary') }}</div>
-                            <div>{{ form.image(class_='form-control') }}</div>
-                        </div>
+            <form class="p-2" action="" method="post" enctype="multipart/form-data">
+                {{ form.csrf_token }}
+                <div class="m-3 text-center"><h3 class="display-3">Create a Post</h3></div>
+                <br/>
+                <div class="m-3">
+                    <div>{{ form.description.label(class_='form-label text-secondary') }}</div>
+                    <div>{{ form.description(class_='form-control', placeholder_='Write something...') }}</div>
+                </div>
+                <div class="m-3">
+                    <div>{{ form.image.label(class_='form-label text-secondary') }}</div>
+                    <div>{{ form.image(class_='form-control') }}</div>
+                </div>
 
-                        <div class="m-3">
+                <div class="m-3">
                             <span class="text-danger">
                                 {% with messages = get_flashed_messages() %}
                                     {% if messages %}
@@ -29,19 +28,18 @@
                                     {% endif %}
                                 {% endwith %}
                             </span>
-                        </div>
-                        <br/>
-                        <div class="my-3 d-grid col-5 mx-auto">
-                            {{ form.submit(class_='btn btn-outline-primary') }}
-                        </div>
-
-                        <br/>
-                        <div class="m-3 text-center text-secondary">Don't feel like writing?
-                            <a href="/" class="text-decoration-none">Home</a>
-                        </div>
-                    </form>
                 </div>
-            </div>
+                <br/>
+                <div class="my-3 d-grid col-5 mx-auto">
+                    {{ form.submit(class_='btn btn-outline-primary') }}
+                </div>
 
+                <br/>
+                <div class="m-3 text-center text-secondary">Don't feel like writing?
+                    <a href="/" class="text-decoration-none link-primary">Home</a>
+                </div>
+            </form>
+        </div>
+    </div>
 
 {% endblock %}

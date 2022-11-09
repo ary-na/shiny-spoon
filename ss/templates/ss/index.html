@@ -23,18 +23,18 @@
                             <div class="card text-bg-dark mb-4 shadow">
                                 <div class="card-body py-sm-4 d-flex flex-column gap-4">
                                     <div class="container-fluid d-flex flex-row gap-3 justify-content-start align-items-center align-content-center">
-                                        <img src="{{ url_for('static', filename='img/user/default-user-profile-img-white.png') }}"
+                                        <img src="{{ get_pre_signed_url_profile_img(post['user_profile_img_key']) }}"
                                              width="60" height="60" alt="User Profile Image"/>
                                         <div class="d-flex flex-column justify-content-between">
-                                            <h5>{{ user['username'] }}</h5>
+                                            <h5>{{ post['username'] }}</h5>
                                             <small class="text-muted">{{ convert_date_time_utc_to_local(post['date_time_utc']) }}</small>
                                         </div>
                                     </div>
                                     <div class="container-fluid d-flex flex-column gap-3">
                                         <p class="card-text">{{ post['description'] }}</p>
-                                        {% if post['img_key'] %}
+                                        {% if post['post_img_key'] %}
                                             <img class="align-self-center w-100 rounded"
-                                                 src="{{ get_pre_signed_url_post_img(post['img_key']) }}"
+                                                 src="{{ get_pre_signed_url_post_img(post['post_img_key']) }}"
                                                  alt="Post Image"/>
                                         {% endif %}
                                     </div>

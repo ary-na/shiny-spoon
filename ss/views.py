@@ -1,9 +1,10 @@
 import uuid
 
-from flask import Blueprint, render_template, request, session, redirect, url_for
+from flask import Blueprint, render_template, request, session, redirect, url_for, flash
 
 from ss import login_required
-from ss.models import Weather, CreatePostForm, Utilities, Posts, Logins, convert_date_time_utc_to_local
+from ss.models import Weather, CreatePostForm, Utilities, Posts, Logins, convert_date_time_utc_to_local, \
+    UpdateAccountForm, DeleteAccountForm
 
 posts = Posts()
 logins = Logins()
@@ -44,17 +45,53 @@ def user_account():
 
 
 # Update account
-@views.route('/update-account')
+@views.route('/update-account', methods=['GET', 'POST'])
 @login_required
 def update_account():
-    return render_template('account/update.html')
+    form = UpdateAccountForm()
+    user = logins.get_login(session['email'])
+
+    if form.validate_on_submit():
+        old_password = form.old_password.data
+        new_password = form.new_password.data
+        image = request.files['image']
+
+        if not old_password and not new_password and not image:
+            flash('Input required', 'error')
+
+        if new_password and old_password and old_password == user[0]['password']:
+            logins.update_login_password(user[0]['email'], user[0]['username'], new_password)
+            flash('Password successfully changed', 'success')
+        elif old_password or new_password and old_password != user[0]['password']:
+            flash('Old password is incorrect', 'error')
+
+        if image:
+            profile_image_key = str(uuid.uuid4()) + image.filename
+            utilities.upload_profile_img(image, profile_image_key)
+            logins.update_login_profile_image(user[0]['email'], user[0]['username'], profile_image_key)
+            user = logins.get_login(session['email'])
+            flash('Profile image successfully updated', 'success')
+
+    return render_template('account/update.html', user=user[0], form=form,
+                           get_pre_signed_url_profile_img=utilities.get_pre_signed_url_profile_img)
 
 
 # Delete account
-@views.route('/delete-account')
+@views.route('/delete-account', methods=['GET', 'POST'])
 @login_required
 def delete_account():
-    return render_template('account/delete.html')
+    form = DeleteAccountForm()
+    if form.validate_on_submit():
+        user = logins.get_login(session['email'])
+        user_posts = posts.get_user_posts(user[0]['email'])
+
+        for post in user_posts:
+            posts.update_post_active_state(user[0]['email'], post['date_time_utc'])
+
+        logins.delete_login(user[0]['email'], user[0]['username'])
+        return redirect(url_for('auth.logout'))
+
+    return render_template('account/delete.html', form=form)
 
 
 # Create post
@@ -62,6 +99,7 @@ def delete_account():
 @login_required
 def create_post():
     form = CreatePostForm()
+    user = logins.get_login(session['email'])
 
     if form.validate_on_submit():
         description = form.description.data
@@ -72,7 +110,7 @@ def create_post():
             post_image_key = str(uuid.uuid4()) + image.filename
             utilities.upload_post_img(image, post_image_key)
 
-        posts.add_post(session.get('email'), description, post_image_key)
+        posts.add_post(user[0]['email'], user[0]['username'], user[0]['img_key'], description, post_image_key)
         return redirect(url_for('views.index'))
 
     return render_template('post/create.html', form=form)
