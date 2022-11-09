@@ -92,6 +92,10 @@ https://stackoverflow.com/questions/534839/how-to-create-a-guid-uuid-in-python
 
 
 
+[52] R. Gurung, E. Popal and davidism, "Passing variables through URL to a flask app", Stack Overflow, 2022. [Online]. Available: <https://stackoverflow.com/questions/24052362/passing-variables-through-url-to-a-flask-app>. [Accessed: 29-Sep-2022].
+
+
+
 https://stackoverflow.com/questions/20689195/flask-error-method-not-allowed-the-method-is-not-allowed-for-the-requested-url
 
 https://stackoverflow.com/questions/20689195/flask-error-method-not-allowed-the-method-is-not-allowed-for-the-requested-url
