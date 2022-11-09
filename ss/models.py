@@ -126,6 +126,19 @@ class CreatePostForm(FlaskForm):
     submit = SubmitField('Create')
 
 
+# Change password form
+class ChangePasswordForm(FlaskForm):
+    old_password = PasswordField('Old Password', validators=[InputRequired()])
+    new_password = PasswordField('New Password', validators=[InputRequired()])
+    submit = SubmitField('Submit')
+
+
+# Update profile image form
+class UpdateProfileImageForm(FlaskForm):
+    image = FileField('Add Image', validators=[InputRequired()])
+    submit = SubmitField('Update')
+
+
 # Convert date time utc to local time
 def convert_date_time_utc_to_local(date_time_utc_string):
     date_time_utc_object = parser.parse(date_time_utc_string)
