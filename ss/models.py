@@ -1,4 +1,7 @@
+import pytz
 import requests as requests
+from dateutil import tz
+from dateutil import parser
 from flask_wtf import FlaskForm
 from wtforms.validators import InputRequired
 from wtforms import StringField, PasswordField, SubmitField, TextAreaField, FileField
@@ -121,3 +124,11 @@ class CreatePostForm(FlaskForm):
     description = TextAreaField('Description', validators=[InputRequired()])
     image = FileField('Add Image')
     submit = SubmitField('Create')
+
+
+# Convert date time utc to local time
+def convert_date_time_utc_to_local(date_time_utc_string):
+    date_time_utc_object = parser.parse(date_time_utc_string)
+    date_time_local_object = date_time_utc_object.replace(tzinfo=pytz.utc).astimezone(tz.tzlocal())
+    date_time_local_formatted = date_time_local_object.strftime('%d/%m/%Y %H:%M')
+    return date_time_local_formatted

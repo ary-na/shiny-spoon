@@ -3,7 +3,7 @@ import uuid
 from flask import Blueprint, render_template, request, session, redirect, url_for
 
 from ss import login_required
-from ss.models import Weather, CreatePostForm, Utilities, Posts, Logins
+from ss.models import Weather, CreatePostForm, Utilities, Posts, Logins, convert_date_time_utc_to_local
 
 posts = Posts()
 logins = Logins()
@@ -25,7 +25,8 @@ def index():
                            posts=latest_posts,
                            weather_condition="weather_data['days'][0]['description']",
                            get_pre_signed_url_profile_img=utilities.get_pre_signed_url_profile_img,
-                           get_pre_signed_url_post_img=utilities.get_pre_signed_url_post_img)
+                           get_pre_signed_url_post_img=utilities.get_pre_signed_url_post_img,
+                           convert_date_time_utc_to_local=convert_date_time_utc_to_local)
 
 
 # User account
@@ -38,7 +39,8 @@ def user_account():
                            user=user[0],
                            posts=user_posts,
                            get_pre_signed_url_profile_img=utilities.get_pre_signed_url_profile_img,
-                           get_pre_signed_url_post_img=utilities.get_pre_signed_url_post_img)
+                           get_pre_signed_url_post_img=utilities.get_pre_signed_url_post_img,
+                           convert_date_time_utc_to_local=convert_date_time_utc_to_local)
 
 
 # Update account
