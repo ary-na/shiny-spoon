@@ -32,7 +32,7 @@
                 <div class="container-fluid d-flex py-5 flex-column">
 
                     {% if not posts %}
-                        <div class="text-muted text-center"><h3 class="display-3">Hmm, seems quite here...</h3></div>
+                        <div class="text-muted text-center"><h6 class="display-6">Hmm, seems quite here...</h6></div>
                     {% else %}
                         {% for post in posts %}
 
@@ -49,14 +49,17 @@
                                                 <small class="text-muted">{{ convert_date_time_utc_to_local(post['date_time_utc']) }}</small>
                                             </div>
                                         </div>
-                                            <a class="btn btn-sm btn-outline-danger rounded"><small>Delete</small></a>
+                                        <div class="d-flex gap-2">
+                                            <a href="/update-post/{{ post['date_time_utc'] }}" class="btn btn-sm btn-outline-warning rounded"><small>Update</small></a>
+                                            <a href="/delete-post/{{ post['date_time_utc'] }}" class="btn btn-sm btn-outline-danger rounded"><small>Delete</small></a>
+                                        </div>
 
                                     </div>
 
                                     {# Post body #}
                                     <div class="container-fluid d-flex flex-column gap-3">
                                         <p class="card-text">{{ post['description'] }}</p>
-                                        {% if post['img_key'] %}
+                                        {% if post['post_img_key'] %}
                                             <img class="align-self-center w-100 rounded"
                                                  src="{{ get_pre_signed_url_post_img(post['post_img_key']) }}"
                                                  alt="Post Image"/>

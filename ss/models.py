@@ -51,8 +51,14 @@ class Posts:
         requests.post(self.url + 'add-post', params=data)
 
     # Read post
-    def get_post(self, email):
-        return requests.get(self.url + email).json()
+    def get_post(self, email, date_time_utc):
+        return requests.get(self.url + email + '/' + date_time_utc).json()
+
+    # Update post
+    def update_post(self, email, date_time_utc, description, post_img_key):
+        data = {'email': email, 'date_time_utc': date_time_utc, 'description': description,
+                'post_img_key': post_img_key}
+        return requests.put(self.url + 'update-post', params=data)
 
     # Update post active state
     def update_post_active_state(self, email, date_time_utc):
@@ -60,9 +66,9 @@ class Posts:
         return requests.put(self.url + 'update-post-active-state', params=data)
 
     # Delete post
-    def delete_post(self, email):
-        data = {}
-        return requests.delete(self.url + 'update-post', params=data)
+    def delete_post(self, email, date_time_utc):
+        data = {'email': email, 'date_time_utc': date_time_utc}
+        return requests.delete(self.url + 'delete-post', params=data)
 
     def get_user_posts(self, email):
         return requests.get(self.url + email).json()
@@ -130,6 +136,13 @@ class CreatePostForm(FlaskForm):
     description = TextAreaField('Description', validators=[InputRequired()])
     image = FileField('Add Image')
     submit = SubmitField('Create')
+
+
+# Update post form
+class UpdatePostForm(FlaskForm):
+    description = TextAreaField('Description', validators=[InputRequired()])
+    image = FileField('Update Image')
+    submit = SubmitField('Update')
 
 
 # Update Account form

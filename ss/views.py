@@ -4,7 +4,7 @@ from flask import Blueprint, render_template, request, session, redirect, url_fo
 
 from ss import login_required
 from ss.models import Weather, CreatePostForm, Utilities, Posts, Logins, convert_date_time_utc_to_local, \
-    UpdateAccountForm, DeleteAccountForm
+    UpdateAccountForm, DeleteAccountForm, UpdatePostForm
 
 posts = Posts()
 logins = Logins()
@@ -117,14 +117,35 @@ def create_post():
 
 
 # Update post
-@views.route('/update-post')
+@views.route('/update-post/<post_date_time_utc>', methods=['GET', 'POST'])
 @login_required
-def update_post():
-    return render_template('post/update.html')
+def update_post(post_date_time_utc):
+    form = UpdatePostForm()
+    post = posts.get_post(session['email'], post_date_time_utc)
+
+    if form.validate_on_submit():
+        description = form.description.data
+        image = request.files['image']
+
+        if image:
+            post_image_key = str(uuid.uuid4()) + image.filename
+            utilities.upload_post_img(image, post_image_key)
+        else:
+            post_image_key = post['post_img_key']
+
+        posts.update_post(post['email'], post_date_time_utc, description, post_image_key)
+        return redirect(url_for('views.user_account'))
+
+    form.description.data = post['description']
+    return render_template('post/update.html',
+                           form=form,
+                           post=post,
+                           get_pre_signed_url_post_img=utilities.get_pre_signed_url_post_img)
 
 
 # Delete post
-@views.route('/delete-post')
+@views.route('/delete-post/<post_date_time_utc>')
 @login_required
-def delete_post():
-    return render_template('post/delete.html')
+def delete_post(post_date_time_utc):
+    posts.delete_post(session['email'], post_date_time_utc)
+    return redirect(url_for('views.user_account'))
