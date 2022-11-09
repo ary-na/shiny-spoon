@@ -3,4 +3,51 @@
 
 {% block content %}
 
+    <div class="hide-all position-absolute bg-dark top-0 bottom-0 vh-100 vw-100 d-flex align-items-center justify-content-center">
+        <div class="container w-50">
+            <form class="p-2" action="" method="post" enctype="multipart/form-data">
+                {{ form.csrf_token }}
+                <div class="m-3 text-center"><h3 class="display-3">Update your Account</h3></div>
+                <br/>
+                <div class="m-3 text-center">
+                    <img src="{{ get_pre_signed_url_profile_img(user['img_key']) }}"
+                         width="200"
+                         height="200"
+                         alt="Shiny Spoon Logo">
+                </div>
+                <div class="m-3">
+                    <div>{{ form.image.label(class_='form-label text-secondary') }}</div>
+                    <div>{{ form.image(class_='form-control') }}</div>
+                </div>
+                <div class="m-3">
+                    <div>{{ form.old_password.label(class_='form-label text-secondary') }}</div>
+                    <div>{{ form.old_password(class_='form-control', placeholder_='Enter your old password') }}</div>
+                </div>
+                <div class="m-3">
+                    <div>{{ form.new_password.label(class_='form-label text-secondary') }}</div>
+                    <div>{{ form.new_password(class_='form-control', placeholder_='Enter your new password') }}</div>
+                </div>
+
+                <div class="m-3">
+                    {% with messages = get_flashed_messages(with_categories=true) %}
+                        {% if messages %}
+                            {% for category, message in messages %}
+                                <span class="{{ category }}">{{ message }}</span>
+                            {% endfor %}
+                        {% endif %}
+                    {% endwith %}
+                </div>
+                <br/>
+                <div class="my-3 d-grid col-5 mx-auto">
+                    {{ form.submit(class_='btn btn-outline-warning') }}
+                </div>
+
+                <br/>
+                <div class="m-3 text-center text-secondary">Are you done?
+                    <a href="{{ url_for('views.user_account') }}" class="text-decoration-none link-primary">Back</a>
+                </div>
+            </form>
+        </div>
+    </div>
+
 {% endblock %}

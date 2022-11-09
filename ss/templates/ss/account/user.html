@@ -42,7 +42,7 @@
                                     {# Post header #}
                                     <div class="container-fluid d-flex justify-content-between align-items-center align-content-center">
                                         <div class="d-flex flex-row gap-3 justify-content-start align-items-center align-content-center">
-                                            <img src="{{ url_for('static', filename='img/user/default-user-profile-img-white.png') }}"
+                                            <img src="{{ get_pre_signed_url_profile_img(user['img_key']) }}"
                                                  width="60" height="60" alt="User Profile Image"/>
                                             <div class="d-flex flex-column justify-content-between">
                                                 <h5>{{ user['username'] }}</h5>
@@ -58,7 +58,7 @@
                                         <p class="card-text">{{ post['description'] }}</p>
                                         {% if post['img_key'] %}
                                             <img class="align-self-center w-100 rounded"
-                                                 src="{{ get_pre_signed_url_post_img(post['img_key']) }}"
+                                                 src="{{ get_pre_signed_url_post_img(post['post_img_key']) }}"
                                                  alt="Post Image"/>
                                         {% endif %}
                                     </div>
