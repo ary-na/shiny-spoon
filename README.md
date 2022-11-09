@@ -1,9 +1,10 @@
 # shiny-spoon
 
-
 RMIT University - Academic Integrity Warning:
-> "For serious breaches of academic integrity, students can be charged with academic misconduct. Possible penalties include **cancellation of results** and **expulsion resulting in the cancellation of a student's program**."
-For more information visit [Academic Integrity at RMIT](https://www.rmit.edu.au/students/my-course/assessment-results/academic-integrity)
+> "For serious breaches of academic integrity, students can be charged with academic misconduct. Possible penalties
+> include **cancellation of results** and **expulsion resulting in the cancellation of a student's program**."
+> For more information
+> visit [Academic Integrity at RMIT](https://www.rmit.edu.au/students/my-course/assessment-results/academic-integrity)
 
 ### References
 
@@ -20,15 +21,9 @@ https://intellij-support.jetbrains.com/hc/en-us/community/posts/360003909960-boo
 https://stackoverflow.com/questions/56466255/why-isnt-my-flask-website-running-css-file
 https://stackoverflow.com/questions/10336194/top-nav-bar-blocking-top-content-of-the-page?answertab=votes#tab-top
 
-
-
 https://pythonprogramming.net/decorator-wrappers-flask-tutorial-login-required/
 
-
-
 https://www.visualcrossing.com
-
-
 
 https://geekyhumans.com/how-to-implement-google-login-in-flask-app/
 https://geekyhumans.com/how-to-implement-google-login-in-flask-app/
@@ -56,36 +51,38 @@ https://www.pinterest.com.au
 
 https://9to5answer.com/insecure-login-blocked-you-can-39-t-get-an-access-token-or-log-in-to-this-app-from-an-insecure-page-try-re-loading-the-page-as-https
 
-
-
 https://stackoverflow.com/questions/5707189/facebook-oauth-retrieve-user-email
 
 https://stackoverflow.com/questions/21203351/rauth2-decoder-failed-to-handle-access-token-when-i-tried-to-connect-with-box-co
 
-
 https://help.sharetribe.com/en/articles/1317484-facebook-error-can-t-load-url-the-domain-of-this-url-isn-t-included-in-the-app-s-domains
-
-
 
 https://github.com/litl/rauth/blob/master/examples/facebook/facebook.py
 
 https://stackoverflow.com/questions/62351778/redirect-to-https-using-ngrok
 
+https://thispointer.com/convert-utc-datetime-string-to-local-time-in-python/
 
+https://stackoverflow.com/questions/9433851/converting-utc-time-string-to-datetime-object
+
+[45] h. Alexej, "list of pytz time zones", Gist, 2022. [Online]. Available: <https://gist.github.com/heyalexej/8bf688fd67d7199be4a1682b3eec7568>. [Accessed: 29-Sep-2022].
+
+[46] L. Stanley, R. Cowie, Никита Шишкин and gerardw, "Call a python function from jinja2", Stack Overflow, 2022. [Online]. Available: <https://stackoverflow.com/questions/6036082/call-a-python-function-from-jinja2>. [Accessed: 29-Sep-2022].
+
+[47] "NDB Queries | App Engine standard environment for Python 2 | Google Cloud", Google Cloud, 2022. [Online]. Available: <https://cloud.google.com/appengine/docs/legacy/standard/python/ndb/queries>. [Accessed: 29-Sep-2022].
+
+[48] J. Holloway, D. Foster, M. Tolonen and jfs, "Convert UTC datetime string to local datetime", Stack Overflow, 2022. [Online]. Available: <https://stackoverflow.com/questions/4770297/convert-utc-datetime-string-to-local-datetime>. [Accessed: 29-Sep-2022].
+
+[49] R. Vuta, "How to change the format of date in Python", codespeedy, 2022. [Online]. Available: <https://www.codespeedy.com/change-the-format-of-date-in-python/>. [Accessed: 29-Sep-2022].
 
 https://github.com/litl/rauth/blob/master/examples/facebook/facebook.py
 https://github.com/litl/rauth/blob/master/examples/facebook/facebook.py
-
 
 https://www.pinterest.com.au/pin/160300067978024618/
 https://stackoverflow.com/questions/48391369/two-column-layout-with-one-fixed-and-one-scroll
 
-
 https://www.pinterest.com.au
 
 https://www.goodreads.com/quotes
-
-
-
 
 https://stackoverflow.com/questions/534839/how-to-create-a-guid-uuid-in-python
