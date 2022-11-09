@@ -29,9 +29,9 @@ class Logins:
         requests.put(self.url + 'update-login-password', params=data)
 
     # Update login profile image
-    def update_login_profile_image(self, email, username, new_img_key):
+    def update_login_image_key(self, email, username, new_img_key):
         data = {'email': email, 'username': username, 'img_key': new_img_key}
-        requests.put(self.url + 'update-login-profile-image', params=data)
+        requests.put(self.url + 'update-login-image-key', params=data)
 
     # Delete login
     def delete_login(self, email, username):
@@ -45,8 +45,8 @@ class Posts:
         self.url = 'http://127.0.0.1:8000/posts/'
 
     # Create post
-    def add_post(self, email, username, user_profile_img_key, description, post_img_key):
-        data = {'email': email, 'username': username, 'user_profile_img_key': user_profile_img_key,
+    def add_post(self, email, username, login_img_key, description, post_img_key):
+        data = {'email': email, 'username': username, 'login_img_key': login_img_key,
                 'description': description, 'post_img_key': post_img_key}
         requests.post(self.url + 'add-post', params=data)
 

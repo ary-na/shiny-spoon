@@ -68,7 +68,7 @@ def update_account():
         if image:
             profile_image_key = str(uuid.uuid4()) + image.filename
             utilities.upload_profile_img(image, profile_image_key)
-            logins.update_login_profile_image(user[0]['email'], user[0]['username'], profile_image_key)
+            logins.update_login_image_key(user[0]['email'], user[0]['username'], profile_image_key)
             user = logins.get_login(session['email'])
             flash('Profile image successfully updated', 'success')
 
