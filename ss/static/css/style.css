@@ -7,6 +7,14 @@ body {
     z-index: 1070;
 }
 
+.success {
+     color: #198754;
+}
+
+.error {
+     color: #dc3545;
+}
+
 footer {
     height: 350px;
 }
