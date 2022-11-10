@@ -8,72 +8,87 @@ RMIT University - Academic Integrity Warning:
 
 ### References
 
-https://stackoverflow.com/questions/42354001/json-object-must-be-str-bytes-or-bytearray-not-dict
-https://stackoverflow.com/questions/60139482/object-of-type-response-is-not-json-serializable
-https://dev.to/machel/consuming-api-using-flask-and-containerization-with-docker-20em
-https://towardsdatascience.com/creating-restful-apis-using-flask-and-python-655bad51b24
-https://www.askpython.com/python-modules/flask/flask-rest-api
-https://stackoverflow.com/questions/58461052/syntaxerror-await-outside-function
-https://stackoverflow.com/questions/61992586/coroutine-object-is-not-json-serializable
-https://testdriven.io/blog/flask-async/
-https://stackoverflow.com/questions/70505248/how-can-i-use-async-await-functions-in-flask-with-discord-py
-https://intellij-support.jetbrains.com/hc/en-us/community/posts/360003909960-bootstrap-classes-autocomplete-in-pycharm-Django
-https://stackoverflow.com/questions/56466255/why-isnt-my-flask-website-running-css-file
-https://stackoverflow.com/questions/10336194/top-nav-bar-blocking-top-content-of-the-page?answertab=votes#tab-top
+[1] “python - JSON object must be str, bytes or bytearray, not dict,” Stack Overflow. https://stackoverflow.com/questions/42354001/json-object-must-be-str-bytes-or-bytearray-not-dict (accessed Nov. 10, 2022).
 
-https://pythonprogramming.net/decorator-wrappers-flask-tutorial-login-required/
+[2] “python - Object of type Response is not JSON serializable,” Stack Overflow. https://stackoverflow.com/questions/60139482/object-of-type-response-is-not-json-serializable (accessed Nov. 10, 2022).
 
-https://www.visualcrossing.com
+[3] “Consuming API Using Flask and Containerization with Docker,” DEV Community. https://dev.to/machel/consuming-api-using-flask-and-containerization-with-docker-20em (accessed Nov. 10, 2022).
 
-https://geekyhumans.com/how-to-implement-google-login-in-flask-app/
-https://geekyhumans.com/how-to-implement-google-login-in-flask-app/
+[4] J. Dholakia, “Creating RESTful Web APIs using Flask and Python,” Medium, Apr. 16, 2021. https://towardsdatascience.com/creating-restful-apis-using-flask-and-python-655bad51b24
 
-https://www.geeksforgeeks.org/oauth-authentication-with-flask-connect-to-google-twitter-and-facebook/
+[5] “Flask REST API - Set up Guide for Your Flask Application - AskPython,” Sep. 24, 2020. https://www.askpython.com/python-modules/flask/flask-rest-api (accessed Nov. 10, 2022).
 
-https://getbootstrap.com/docs/5.2/components/navbar/
+[6] “python - SyntaxError: ‘await’ outside function,” Stack Overflow. https://stackoverflow.com/questions/58461052/syntaxerror-await-outside-function (accessed Nov. 10, 2022).
 
-https://getbootstrap.com/docs/5.1/examples/footers/
+[7] “python - coroutine object is not JSON serializable,” Stack Overflow. https://stackoverflow.com/questions/61992586/coroutine-object-is-not-json-serializable (accessed Nov. 10, 2022).
 
-https://softauthor.com/css-make-a-div-height-full-screen/
-https://mdbootstrap.com/docs/standard/layout/z-index/
+[8] “Async in Flask 2.0,” testdriven.io. https://testdriven.io/blog/flask-async/ (accessed Nov. 10, 2022).
 
-https://brandeps.com/logo/G/Google-2015-Favicon-01
+[9] “python - How can I use async/await functions in flask with discord.py?,” Stack Overflow. https://stackoverflow.com/questions/70505248/how-can-i-use-async-await-functions-in-flask-with-discord-py (accessed Nov. 10, 2022).
 
-https://flask.palletsprojects.com/en/1.1.x/patterns/favicon/
+[10] “bootstrap classes autocomplete in pycharm/Django,” intellij-support.jetbrains.com/, Jun. 04, 2019. https://intellij-support.jetbrains.com/hc/en-us/community/posts/360003909960-bootstrap-classes-autocomplete-in-pycharm-Django (accessed Nov. 10, 2022).
 
-https://convertio.co
-https://www.sitepoint.com/use-ngrok-test-local-site/
-https://github.com/requests/requests-oauthlib/issues/288
+[11] “python - Why isn’t my Flask Website running CSS File?,” Stack Overflow. https://stackoverflow.com/questions/56466255/why-isnt-my-flask-website-running-css-file (accessed Nov. 10, 2022).
 
-https://stackoverflow.com/questions/60524726/post-data-and-creating-rest-api-with-python-flask
+[12] “css - top nav bar blocking top content of the page,” Stack Overflow. https://stackoverflow.com/questions/10336194/top-nav-bar-blocking-top-content-of-the-page?answertab=votes#tab-top (accessed Nov. 10, 2022).
 
-https://www.pinterest.com.au
+[13] “Python Programming Tutorials,” pythonprogramming.net. https://pythonprogramming.net/decorator-wrappers-flask-tutorial-login-required/ (accessed Nov. 10, 2022).
 
-https://9to5answer.com/insecure-login-blocked-you-can-39-t-get-an-access-token-or-log-in-to-this-app-from-an-insecure-page-try-re-loading-the-page-as-https
+[14] Visual Crossing Corporation, “Weather Data & Weather API | Visual Crossing,” Visualcrossing.com, 2021. https://www.visualcrossing.com
 
-https://stackoverflow.com/questions/5707189/facebook-oauth-retrieve-user-email
+[15] V. Srivastava, “How to Implement Google Login in Flask App,” Geeky Humans, Feb. 22, 2022. https://geekyhumans.com/how-to-implement-google-login-in-flask-app/ (accessed Nov. 10, 2022).
 
-https://stackoverflow.com/questions/21203351/rauth2-decoder-failed-to-handle-access-token-when-i-tried-to-connect-with-box-co
+[16] V. Srivastava, “How to Implement Google Login in Flask App,” Geeky Humans, Feb. 22, 2022. https://geekyhumans.com/how-to-implement-google-login-in-flask-app/ (accessed Nov. 10, 2022).
 
-https://help.sharetribe.com/en/articles/1317484-facebook-error-can-t-load-url-the-domain-of-this-url-isn-t-included-in-the-app-s-domains
+[17] “OAuth Authentication with Flask - Connect to Google, Twitter, and Facebook,” GeeksforGeeks, Sep. 14, 2021. https://www.geeksforgeeks.org/oauth-authentication-with-flask-connect-to-google-twitter-and-facebook/ (accessed Nov. 10, 2022).
 
-https://github.com/litl/rauth/blob/master/examples/facebook/facebook.py
+[18] M. O. contributors Jacob Thornton, and Bootstrap, “Navbar,” getbootstrap.com. https://getbootstrap.com/docs/5.2/components/navbar/
 
-https://stackoverflow.com/questions/62351778/redirect-to-https-using-ngrok
+[19] “Footers · Bootstrap v5.1,” getbootstrap.com. https://getbootstrap.com/docs/5.1/examples/footers/ (accessed Nov. 10, 2022).
 
-https://thispointer.com/convert-utc-datetime-string-to-local-time-in-python/
+[20] R. Tamil, “CSS Make A Div Height Full Screen [THREE SIMPLE WAYS],” SoftAuthor, Apr. 17, 2020. https://softauthor.com/css-make-a-div-height-full-screen/ (accessed Nov. 10, 2022).
 
-https://stackoverflow.com/questions/9433851/converting-utc-time-string-to-datetime-object
+[21] “Z-index - Bootstrap examples & tutorial,” MDB - Material Design for Bootstrap. https://mdbootstrap.com/docs/standard/layout/z-index/ (accessed Nov. 10, 2022).
 
-[45] h. Alexej, "list of pytz time zones", Gist, 2022. [Online]. Available: <https://gist.github.com/heyalexej/8bf688fd67d7199be4a1682b3eec7568>. [Accessed: 29-Sep-2022].
+[22] “Google logo vector,” brandeps.com. https://brandeps.com/logo/G/Google-2015-Favicon-01 (accessed Nov. 10, 2022).
 
-[46] L. Stanley, R. Cowie, Никита Шишкин and gerardw, "Call a python function from jinja2", Stack Overflow, 2022. [Online]. Available: <https://stackoverflow.com/questions/6036082/call-a-python-function-from-jinja2>. [Accessed: 29-Sep-2022].
+[23] “Adding a favicon — Flask Documentation (1.1.x),” flask.palletsprojects.com. https://flask.palletsprojects.com/en/1.1.x/patterns/favicon/ (accessed Nov. 10, 2022).
 
-[47] "NDB Queries | App Engine standard environment for Python 2 | Google Cloud", Google Cloud, 2022. [Online]. Available: <https://cloud.google.com/appengine/docs/legacy/standard/python/ndb/queries>. [Accessed: 29-Sep-2022].
+[24] “Convertio — File Converter,” convertio.co. https://convertio.co (accessed Nov. 10, 2022).
 
-[48] J. Holloway, D. Foster, M. Tolonen and jfs, "Convert UTC datetime string to local datetime", Stack Overflow, 2022. [Online]. Available: <https://stackoverflow.com/questions/4770297/convert-utc-datetime-string-to-local-datetime>. [Accessed: 29-Sep-2022].
+[25] “ngrok Step-by-Step Guide: Easily Share Your Local Server - SitePoint,” www.sitepoint.com, Apr. 22, 2021. https://www.sitepoint.com/use-ngrok-test-local-site/ (accessed Nov. 10, 2022).
 
-[49] R. Vuta, "How to change the format of date in Python", codespeedy, 2022. [Online]. Available: <https://www.codespeedy.com/change-the-format-of-date-in-python/>. [Accessed: 29-Sep-2022].
+[26] “KeyError: ‘oauth_token’ after authorization · Issue #288 · requests/requests-oauthlib,” GitHub. https://github.com/requests/requests-oauthlib/issues/288 (accessed Nov. 10, 2022).
+
+[27] “POST data and creating REST API with Python/Flask,” Stack Overflow. https://stackoverflow.com/questions/60524726/post-data-and-creating-rest-api-with-python-flask (accessed Nov. 10, 2022).
+
+[28] Pinterest, “Pinterest (Australia),” Pinterest, 2019. https://www.pinterest.com.au
+
+[29] 9to5answer.com. https://9to5answer.com/insecure-login-blocked-you-can-39-t-get-an-access-token-or-log-in-to-this-app-from-an-insecure-page-try-re-loading-the-page-as-https (accessed Nov. 10, 2022).
+
+[30] “Facebook oauth retrieve user Email,” Stack Overflow. https://stackoverflow.com/questions/5707189/facebook-oauth-retrieve-user-email (accessed Nov. 10, 2022).
+
+[31] “python - rauth2 Decoder failed to handle access_token when I tried to connect with Box.com’s API,” Stack Overflow. https://stackoverflow.com/questions/21203351/rauth2-decoder-failed-to-handle-access-token-when-i-tried-to-connect-with-box-co (accessed Nov. 10, 2022).
+
+[32] “Facebook error: “Can’t load URL: The domain of this URL isn’t included in the app’s domains...“,” help.sharetribe.com. https://help.sharetribe.com/en/articles/1317484-facebook-error-can-t-load-url-the-domain-of-this-url-isn-t-included-in-the-app-s-domains (accessed Nov. 10, 2022).
+
+[33] “Rauth,” GitHub, Nov. 07, 2022. https://github.com/litl/rauth/blob/master/examples/facebook/facebook.py (accessed Nov. 10, 2022).
+
+[34] “Redirect to https using ngrok,” Stack Overflow. https://stackoverflow.com/questions/62351778/redirect-to-https-using-ngrok (accessed Nov. 10, 2022).
+
+[35] Varun, “Convert UTC datetime string to local time in Python – thisPointer.” https://thispointer.com/convert-utc-datetime-string-to-local-time-in-python/ (accessed Nov. 10, 2022).
+
+[36] “python - Converting utc time string to datetime object,” Stack Overflow. https://stackoverflow.com/questions/9433851/converting-utc-time-string-to-datetime-object (accessed Nov. 10, 2022).
+
+[37] h. Alexej, "list of pytz time zones", Gist, 2022. [Online]. Available: <https://gist.github.com/heyalexej/8bf688fd67d7199be4a1682b3eec7568>. [Accessed: 29-Sep-2022].
+
+[38] L. Stanley, R. Cowie, Никита Шишкин and gerardw, "Call a python function from jinja2", Stack Overflow, 2022. [Online]. Available: <https://stackoverflow.com/questions/6036082/call-a-python-function-from-jinja2>. [Accessed: 29-Sep-2022].
+
+[39] "NDB Queries | App Engine standard environment for Python 2 | Google Cloud", Google Cloud, 2022. [Online]. Available: <https://cloud.google.com/appengine/docs/legacy/standard/python/ndb/queries>. [Accessed: 29-Sep-2022].
+
+[40] J. Holloway, D. Foster, M. Tolonen and jfs, "Convert UTC datetime string to local datetime", Stack Overflow, 2022. [Online]. Available: <https://stackoverflow.com/questions/4770297/convert-utc-datetime-string-to-local-datetime>. [Accessed: 29-Sep-2022].
+
+[41] R. Vuta, "How to change the format of date in Python", codespeedy, 2022. [Online]. Available: <https://www.codespeedy.com/change-the-format-of-date-in-python/>. [Accessed: 29-Sep-2022].
 
 https://github.com/litl/rauth/blob/master/examples/facebook/facebook.py
 https://github.com/litl/rauth/blob/master/examples/facebook/facebook.py
