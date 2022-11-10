@@ -83,9 +83,7 @@ class Posts:
 class Weather:
 
     def __init__(self):
-        self.key = os.getenv('VISUAL_CROSSING_API_KEY')
-        self.url = 'https://weather.visualcrossing.com/VisualCrossingWebServices/rest/services/timeline/Melbourne' \
-                   '/today?unitGroup=us&include=days&key=' + self.key + '&contentType=json'
+        self.url = os.getenv('VISUAL_CROSSING_API_URL')
 
     def get_data(self):
         return requests.get(self.url).json()
