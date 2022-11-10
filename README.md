@@ -101,3 +101,25 @@ https://stackoverflow.com/questions/20689195/flask-error-method-not-allowed-the-
 https://stackoverflow.com/questions/20689195/flask-error-method-not-allowed-the-method-is-not-allowed-for-the-requested-url
 
 
+
+https://stackoverflow.com/questions/23013220/max-retries-exceeded-with-url-in-requests
+
+https://stackoverflow.com/questions/36386947/only-allow-aws-api-gateway-to-access-ec2-instance
+
+https://codethief.io/aws-connect-api-gateway-to-ec2/
+
+https://github.com/encode/starlette/issues/353
+
+https://medium.com/techfront/step-by-step-visual-guide-on-deploying-a-flask-application-on-aws-ec2-8e3e8b82c4f7
+
+https://dev.to/nick_langat/how-to-deploy-a-fastapi-app-to-aws-ec2-server-46d4
+
+https://lcalcagni.medium.com/deploy-your-fastapi-to-aws-ec2-using-nginx-aa8aa0d85ec7
+
+https://lcalcagni.medium.com/deploy-your-fastapi-to-aws-ec2-using-nginx-aa8aa0d85ec7
+
+https://medium.com/nerd-for-tech/how-to-deploy-python-django-project-on-aws-ec2-ubuntu-server-5c484fdb8f8c
+
+https://medium.com/nerd-for-tech/how-to-deploy-python-django-project-on-aws-ec2-ubuntu-server-5c484fdb8f8c
+
+https://medium.com/nerd-for-tech/how-to-deploy-python-django-project-on-aws-ec2-ubuntu-server-5c484fdb8f8c
