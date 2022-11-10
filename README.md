@@ -133,3 +133,5 @@ RMIT University - Academic Integrity Warning:
 [62] R. Gupta, “How to deploy Python Django Project on AWS EC2 Ubuntu Server.,” Nerd For Tech, Dec. 12, 2021. https://medium.com/nerd-for-tech/how-to-deploy-python-django-project-on-aws-ec2-ubuntu-server-5c484fdb8f8c (accessed Nov. 10, 2022).
 
 [63] R. Gupta, “How to deploy Python Django Project on AWS EC2 Ubuntu Server.,” Nerd For Tech, Dec. 12, 2021. https://medium.com/nerd-for-tech/how-to-deploy-python-django-project-on-aws-ec2-ubuntu-server-5c484fdb8f8c (accessed Nov. 10, 2022).
+
+[64] “SVG User Avatar Pack | Figma Community,” Figma, 2022. https://www.figma.com/community/file/898457975261805002 (accessed Nov. 10, 2022).
