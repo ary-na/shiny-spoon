@@ -90,51 +90,46 @@ RMIT University - Academic Integrity Warning:
 
 [41] R. Vuta, "How to change the format of date in Python", codespeedy, 2022. [Online]. Available: <https://www.codespeedy.com/change-the-format-of-date-in-python/>. [Accessed: 29-Sep-2022].
 
-https://github.com/litl/rauth/blob/master/examples/facebook/facebook.py
-https://github.com/litl/rauth/blob/master/examples/facebook/facebook.py
+[42] “Rauth,” GitHub, Nov. 07, 2022. https://github.com/litl/rauth/blob/master/examples/facebook/facebook.py
 
-https://www.pinterest.com.au/pin/160300067978024618/
-https://stackoverflow.com/questions/48391369/two-column-layout-with-one-fixed-and-one-scroll
+[43] “Rauth,” GitHub, Nov. 07, 2022. https://github.com/litl/rauth/blob/master/examples/facebook/facebook.py
 
-https://www.pinterest.com.au
+[44] “Pin on CSS WEB DESIGN,” Pinterest. https://www.pinterest.com.au/pin/160300067978024618/ (accessed Nov. 10, 2022).
 
-https://www.goodreads.com/quotes
+[45] “html - Two column layout with one fixed and one scroll,” Stack Overflow. https://stackoverflow.com/questions/48391369/two-column-layout-with-one-fixed-and-one-scroll (accessed Nov. 10, 2022).
 
-https://stackoverflow.com/questions/534839/how-to-create-a-guid-uuid-in-python
+[46] Pinterest, “Pinterest (Australia),” Pinterest, 2019. https://www.pinterest.com.au
 
-[31] R. Simon, "Change color of flask.flash messages", Stack Overflow, 2022. [Online]. Available: <https://stackoverflow.com/questions/44569040/change-color-of-flask-flash-messages>. [Accessed: 29-Sep-2022].
+[47] “Popular Quotes,” Goodreads.com, 2018. https://www.goodreads.com/quotes
 
+[48] “How to create a GUID/UUID in Python,” Stack Overflow. https://stackoverflow.com/questions/534839/how-to-create-a-guid-uuid-in-python (accessed Nov. 10, 2022).
 
+[49] R. Simon, "Change color of flask.flash messages", Stack Overflow, 2022. [Online]. Available: <https://stackoverflow.com/questions/44569040/change-color-of-flask-flash-messages>. [Accessed: 29-Sep-2022].
 
+[50] R. Gurung, E. Popal and davidism, "Passing variables through URL to a flask app", Stack Overflow, 2022. [Online]. Available: <https://stackoverflow.com/questions/24052362/passing-variables-through-url-to-a-flask-app>. [Accessed: 29-Sep-2022].
 
-[52] R. Gurung, E. Popal and davidism, "Passing variables through URL to a flask app", Stack Overflow, 2022. [Online]. Available: <https://stackoverflow.com/questions/24052362/passing-variables-through-url-to-a-flask-app>. [Accessed: 29-Sep-2022].
+[51] “python - Flask Error: ‘Method Not Allowed The method is not allowed for the requested URL,’” Stack Overflow. https://stackoverflow.com/questions/20689195/flask-error-method-not-allowed-the-method-is-not-allowed-for-the-requested-url (accessed Nov. 10, 2022).
 
+[52] “python - Flask Error: ‘Method Not Allowed The method is not allowed for the requested URL,’” Stack Overflow. https://stackoverflow.com/questions/20689195/flask-error-method-not-allowed-the-method-is-not-allowed-for-the-requested-url (accessed Nov. 10, 2022).
 
+[53] “python - Max retries exceeded with URL in requests,” Stack Overflow. https://stackoverflow.com/questions/23013220/max-retries-exceeded-with-url-in-requests (accessed Nov. 10, 2022).
 
-https://stackoverflow.com/questions/20689195/flask-error-method-not-allowed-the-method-is-not-allowed-for-the-requested-url
+[54] “amazon web services - Only allow AWS API Gateway to access EC2 instance,” Stack Overflow. https://stackoverflow.com/questions/36386947/only-allow-aws-api-gateway-to-access-ec2-instance (accessed Nov. 10, 2022).
 
-https://stackoverflow.com/questions/20689195/flask-error-method-not-allowed-the-method-is-not-allowed-for-the-requested-url
+[55] codethief, “[AWS] Connect API Gateway to EC2,” CodeThief, Oct. 07, 2020. https://codethief.io/aws-connect-api-gateway-to-ec2/
 
+[56] “ModuleNotFoundError: No module named ‘uvicorn.lifespan’ · Issue #353 · encode/starlette,” GitHub. https://github.com/encode/starlette/issues/353 (accessed Nov. 10, 2022).
 
+[57] K. Huiyeon, “Step-by-step visual guide on deploying a Flask application on AWS EC2,” Tech Front, Jun. 09, 2020. https://medium.com/techfront/step-by-step-visual-guide-on-deploying-a-flask-application-on-aws-ec2-8e3e8b82c4f7 (accessed Nov. 10, 2022).
 
-https://stackoverflow.com/questions/23013220/max-retries-exceeded-with-url-in-requests
+[58] “How to deploy a FastAPI app to AWS EC2 server.,” DEV Community. Accessed: Nov. 10, 2022. [Online]. Available: https://dev.to/nick_langat/how-to-deploy-a-fastapi-app-to-aws-ec2-server-46d4
 
-https://stackoverflow.com/questions/36386947/only-allow-aws-api-gateway-to-access-ec2-instance
+[59] L. Calcagni, “Deploy your FastAPI API to AWS EC2 using Nginx,” Medium, Mar. 17, 2022. https://lcalcagni.medium.com/deploy-your-fastapi-to-aws-ec2-using-nginx-aa8aa0d85ec7 (accessed Nov. 10, 2022).
 
-https://codethief.io/aws-connect-api-gateway-to-ec2/
+[60] L. Calcagni, “Deploy your FastAPI API to AWS EC2 using Nginx,” Medium, Mar. 17, 2022. https://lcalcagni.medium.com/deploy-your-fastapi-to-aws-ec2-using-nginx-aa8aa0d85ec7 (accessed Nov. 10, 2022).
 
-https://github.com/encode/starlette/issues/353
+[61] R. Gupta, “How to deploy Python Django Project on AWS EC2 Ubuntu Server.,” Nerd For Tech, Dec. 12, 2021. https://medium.com/nerd-for-tech/how-to-deploy-python-django-project-on-aws-ec2-ubuntu-server-5c484fdb8f8c (accessed Nov. 10, 2022).
 
-https://medium.com/techfront/step-by-step-visual-guide-on-deploying-a-flask-application-on-aws-ec2-8e3e8b82c4f7
+[62] R. Gupta, “How to deploy Python Django Project on AWS EC2 Ubuntu Server.,” Nerd For Tech, Dec. 12, 2021. https://medium.com/nerd-for-tech/how-to-deploy-python-django-project-on-aws-ec2-ubuntu-server-5c484fdb8f8c (accessed Nov. 10, 2022).
 
-https://dev.to/nick_langat/how-to-deploy-a-fastapi-app-to-aws-ec2-server-46d4
-
-https://lcalcagni.medium.com/deploy-your-fastapi-to-aws-ec2-using-nginx-aa8aa0d85ec7
-
-https://lcalcagni.medium.com/deploy-your-fastapi-to-aws-ec2-using-nginx-aa8aa0d85ec7
-
-https://medium.com/nerd-for-tech/how-to-deploy-python-django-project-on-aws-ec2-ubuntu-server-5c484fdb8f8c
-
-https://medium.com/nerd-for-tech/how-to-deploy-python-django-project-on-aws-ec2-ubuntu-server-5c484fdb8f8c
-
-https://medium.com/nerd-for-tech/how-to-deploy-python-django-project-on-aws-ec2-ubuntu-server-5c484fdb8f8c
+[63] R. Gupta, “How to deploy Python Django Project on AWS EC2 Ubuntu Server.,” Nerd For Tech, Dec. 12, 2021. https://medium.com/nerd-for-tech/how-to-deploy-python-django-project-on-aws-ec2-ubuntu-server-5c484fdb8f8c (accessed Nov. 10, 2022).
