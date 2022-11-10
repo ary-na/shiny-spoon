@@ -1,3 +1,5 @@
+import os
+
 import pytz
 import requests as requests
 from dateutil import tz
@@ -11,67 +13,67 @@ from wtforms import StringField, PasswordField, SubmitField, TextAreaField, File
 class Logins:
 
     def __init__(self):
-        self.url = 'http://127.0.0.1:8000/logins/'
+        self.url = f"{os.getenv('BASE_URL')}/logins"
 
     # Create login
     def add_login(self, email, username, password=''):
         data = {'email': email, 'username': username, 'password': password, 'img_key': 'default-user-profile-img'
                                                                                        '-white.png'}
-        requests.post(self.url + 'add-login', params=data)
+        requests.post(f'{self.url}/add-login', params=data)
 
     # Read login
     def get_login(self, email):
-        return requests.get(self.url + email).json()
+        return requests.get(f'{self.url}/{email}').json()
 
     # Update login password
     def update_login_password(self, email, username, new_password):
         data = {'email': email, 'username': username, 'password': new_password}
-        requests.put(self.url + 'update-login-password', params=data)
+        requests.put(f'{self.url}/update-login-password', params=data)
 
     # Update login profile image
     def update_login_image_key(self, email, username, new_img_key):
         data = {'email': email, 'username': username, 'img_key': new_img_key}
-        requests.put(self.url + 'update-login-image-key', params=data)
+        requests.put(f'{self.url}/update-login-image-key', params=data)
 
     # Delete login
     def delete_login(self, email, username):
         data = {'email': email, 'username': username}
-        return requests.delete(self.url + 'delete-login', params=data)
+        return requests.delete(f'{self.url}/delete-login', params=data)
 
 
 # Posts
 class Posts:
     def __init__(self):
-        self.url = 'http://127.0.0.1:8000/posts/'
+        self.url = f"{os.getenv('BASE_URL')}/posts"
 
     # Create post
     def add_post(self, email, username, login_img_key, description, post_img_key):
         data = {'email': email, 'username': username, 'login_img_key': login_img_key,
                 'description': description, 'post_img_key': post_img_key}
-        requests.post(self.url + 'add-post', params=data)
+        requests.post(f'{self.url}/add-post', params=data)
 
     # Read post
     def get_post(self, email, date_time_utc):
-        return requests.get(self.url + email + '/' + date_time_utc).json()
+        return requests.get(f'{self.url}/{email}/{date_time_utc}').json()
 
     # Update post
     def update_post(self, email, date_time_utc, description, post_img_key):
         data = {'email': email, 'date_time_utc': date_time_utc, 'description': description,
                 'post_img_key': post_img_key}
-        return requests.put(self.url + 'update-post', params=data)
+        return requests.put(f'{self.url}/update-post', params=data)
 
     # Update post active state
     def update_post_active_state(self, email, date_time_utc):
         data = {'email': email, 'date_time_utc': date_time_utc}
-        return requests.put(self.url + 'update-post-active-state', params=data)
+        return requests.put(f'{self.url}/update-post-active-state', params=data)
 
     # Delete post
     def delete_post(self, email, date_time_utc):
         data = {'email': email, 'date_time_utc': date_time_utc}
-        return requests.delete(self.url + 'delete-post', params=data)
+        return requests.delete(f'{self.url}/delete-post', params=data)
 
     def get_user_posts(self, email):
-        return requests.get(self.url + email).json()
+        return requests.get(f'{self.url}/{email}').json()
 
     def get_posts(self):
         return requests.get(self.url).json()
@@ -81,7 +83,7 @@ class Posts:
 class Weather:
 
     def __init__(self):
-        self.key = "update the key later"
+        self.key = os.getenv('VISUAL_CROSSING_API_KEY')
         self.url = 'https://weather.visualcrossing.com/VisualCrossingWebServices/rest/services/timeline/Melbourne' \
                    '/today?unitGroup=us&include=days&key=' + self.key + '&contentType=json'
 
@@ -93,27 +95,27 @@ class Weather:
 class Utilities:
 
     def __init__(self):
-        self.url = 'http://127.0.0.1:8000/utilities/'
+        self.url = f"{os.getenv('BASE_URL')}/utilities"
 
     # Upload profile image
     def upload_profile_img(self, img_file, object_key):
         data = {'object_key': object_key}
         image = {'img_file': img_file}
-        requests.post(self.url + 'upload-profile-img', params=data, files=image)
+        requests.post(f'{self.url}/upload-profile-img', params=data, files=image)
 
     # Upload post image
     def upload_post_img(self, img_file, object_key):
         data = {'object_key': object_key}
         image = {'img_file': img_file}
-        requests.post(self.url + 'upload-post-img', params=data, files=image)
+        requests.post(f'{self.url}/upload-post-img', params=data, files=image)
 
     # Get pre-signed url profile image
     def get_pre_signed_url_profile_img(self, object_key):
-        return requests.get(self.url + 'profile-img/' + object_key).json()
+        return requests.get(f'{self.url}/profile-img/{object_key}').json()
 
     # Get pre-signed url post image
     def get_pre_signed_url_post_img(self, object_key):
-        return requests.get(self.url + 'post-img/' + object_key).json()
+        return requests.get(f'{self.url}/post-img/{object_key}').json()
 
 
 # Login form

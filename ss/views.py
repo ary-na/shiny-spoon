@@ -17,14 +17,14 @@ views = Blueprint('views', __name__, template_folder="templates/ss")
 @views.route('/')
 @login_required
 def index():
-    # weather_data = weather.get_data()
+    weather_data = weather.get_data()
     user = logins.get_login(session['email'])
     latest_posts = posts.get_posts()
 
     return render_template('index.html',
                            user=user[0],
                            posts=latest_posts,
-                           weather_condition="weather_data['days'][0]['description']",
+                           weather_condition=weather_data['days'][0]['description'],
                            get_pre_signed_url_profile_img=utilities.get_pre_signed_url_profile_img,
                            get_pre_signed_url_post_img=utilities.get_pre_signed_url_post_img,
                            convert_date_time_utc_to_local=convert_date_time_utc_to_local)
