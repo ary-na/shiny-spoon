@@ -42,7 +42,7 @@
                                     {# Post header #}
                                     <div class="container-fluid d-flex justify-content-between align-items-center align-content-center">
                                         <div class="d-flex flex-row gap-3 justify-content-start align-items-center align-content-center">
-                                            <img src="{{ get_pre_signed_url_profile_img(user['img_key']) }}"
+                                            <img class="rounded-circle" src="{{ get_pre_signed_url_profile_img(user['img_key']) }}"
                                                  width="60" height="60" alt="User Profile Image"/>
                                             <div class="d-flex flex-column justify-content-between">
                                                 <h5>{{ user['username'] }}</h5>
