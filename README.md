@@ -135,3 +135,31 @@ RMIT University - Academic Integrity Warning:
 [63] R. Gupta, “How to deploy Python Django Project on AWS EC2 Ubuntu Server.,” Nerd For Tech, Dec. 12, 2021. https://medium.com/nerd-for-tech/how-to-deploy-python-django-project-on-aws-ec2-ubuntu-server-5c484fdb8f8c (accessed Nov. 10, 2022).
 
 [64] “SVG User Avatar Pack | Figma Community,” Figma, 2022. https://www.figma.com/community/file/898457975261805002 (accessed Nov. 10, 2022).
+
+[65] “Routing traffic to an AWS Elastic Beanstalk environment - Amazon Route 53,” docs.aws.amazon.com. https://docs.aws.amazon.com/Route53/latest/DeveloperGuide/routing-to-beanstalk-environment.html#routing-to-beanstalk-environment-get-domain-name (accessed Nov. 11, 2022).
+
+[66] “amazon web services - Upload .env environment variables to elastic beanstalk,” Stack Overflow. https://stackoverflow.com/questions/39414973/upload-env-environment-variables-to-elastic-beanstalk (accessed Nov. 11, 2022).
+
+[67] “git - How can I update a python Flask app on elastic beanstalk?,” Stack Overflow. https://stackoverflow.com/questions/33981834/how-can-i-update-a-python-flask-app-on-elastic-beanstalk (accessed Nov. 11, 2022).
+
+[68] “Upload a certificate to IAM - AWS Elastic Beanstalk,” docs.aws.amazon.com. https://docs.aws.amazon.com/elasticbeanstalk/latest/dg/configuring-https-ssl-upload.html (accessed Nov. 11, 2022).
+
+[69] “What Is AWS Certificate Manager? - AWS Certificate Manager,” Amazon.com, 2019. https://docs.aws.amazon.com/acm/latest/userguide/acm-overview.html
+
+[70] “DNS validation - AWS Certificate Manager,” docs.aws.amazon.com. https://docs.aws.amazon.com/acm/latest/userguide/dns-validation.html
+
+[71] “DNS validation - AWS Certificate Manager,” docs.aws.amazon.com. https://docs.aws.amazon.com/acm/latest/userguide/dns-validation.html
+
+[72] “Email validation - AWS Certificate Manager,” docs.aws.amazon.com. https://docs.aws.amazon.com/acm/latest/userguide/email-validation.html (accessed Nov. 11, 2022).
+
+[73] “Configuring your Elastic Beanstalk environment’s load balancer to terminate HTTPS - AWS Elastic Beanstalk,” docs.aws.amazon.com. https://docs.aws.amazon.com/elasticbeanstalk/latest/dg/configuring-https-elb.html (accessed Nov. 11, 2022).
+
+[74] “Manually install the EB CLI - AWS Elastic Beanstalk,” docs.aws.amazon.com. https://docs.aws.amazon.com/elasticbeanstalk/latest/dg/eb-cli3-install-advanced.html (accessed Nov. 11, 2022).
+
+[75] “Install the EB CLI - AWS Elastic Beanstalk,” docs.aws.amazon.com. https://docs.aws.amazon.com/elasticbeanstalk/latest/dg/eb-cli3-install.html#eb-cli3-install.scripts (accessed Nov. 11, 2022).
+
+[76] “Deploying a flask application to Elastic Beanstalk - AWS Elastic Beanstalk,” docs.aws.amazon.com. https://docs.aws.amazon.com/elasticbeanstalk/latest/dg/create-deploy-python-flask.html
+
+[77] “Deploying a flask application to Elastic Beanstalk - AWS Elastic Beanstalk,” docs.aws.amazon.com. https://docs.aws.amazon.com/elasticbeanstalk/latest/dg/create-deploy-python-flask.html
+
+
