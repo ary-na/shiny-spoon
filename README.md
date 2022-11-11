@@ -162,4 +162,6 @@ RMIT University - Academic Integrity Warning:
 
 [77] “Deploying a flask application to Elastic Beanstalk - AWS Elastic Beanstalk,” docs.aws.amazon.com. https://docs.aws.amazon.com/elasticbeanstalk/latest/dg/create-deploy-python-flask.html
 
+[78] “Lorem Ipsum,” Lorem Ipsum, 2020. https://loremipsum.io/generator/?n=5&t=p
 
+[79] Unsplash, “Beautiful Free Images & Pictures | Unsplash,” Unsplash.com, 2019. https://unsplash.com
