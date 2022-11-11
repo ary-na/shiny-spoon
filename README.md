@@ -6,6 +6,12 @@ RMIT University - Academic Integrity Warning:
 > For more information
 > visit [Academic Integrity at RMIT](https://www.rmit.edu.au/students/my-course/assessment-results/academic-integrity)
 
+## Links
+
+- [Website](https://ss.shinyspoon.link)
+- [Api Repo](https://github.com/ary-na/shiny-spoon-api)
+- [Lambda Function Repo](https://github.com/ary-na/shiny-spoon-lambda-function)
+
 ## Screenshots
 
 **Login page** screenshot
