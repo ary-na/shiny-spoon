@@ -6,6 +6,20 @@ RMIT University - Academic Integrity Warning:
 > For more information
 > visit [Academic Integrity at RMIT](https://www.rmit.edu.au/students/my-course/assessment-results/academic-integrity)
 
+## Screenshots
+
+**Login page** screenshot
+![Login page](ss/static/img/screenshots/login.png)
+
+**Create account page** screenshot
+![Create account page](ss/static/img/screenshots/create-account.png)
+
+**Home page** screenshot
+![Home page](ss/static/img/screenshots/home.png)
+
+**User profile page** screenshot
+![User profile page](ss/static/img/screenshots/user-profile.png)
+
 ### References
 
 [1] “python - JSON object must be str, bytes or bytearray, not dict,” Stack Overflow. https://stackoverflow.com/questions/42354001/json-object-must-be-str-bytes-or-bytearray-not-dict (accessed Nov. 10, 2022).
