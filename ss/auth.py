@@ -20,7 +20,7 @@ flow = Flow.from_client_secrets_file(client_secrets_file=client_secrets_file,
                                      scopes=['https://www.googleapis.com/auth/userinfo.profile',
                                              'https://www.googleapis.com/auth/userinfo.email',
                                              'openid'],
-                                     redirect_uri='http://127.0.0.1:5000/callback'
+                                     redirect_uri='https://ss.shinyspoon.link/callback'
                                      )
 
 # Facebook service wrapper
