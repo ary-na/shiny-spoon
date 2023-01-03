@@ -8,7 +8,7 @@ RMIT University - Academic Integrity Warning:
 
 ## Links
 
-- [Website](https://ss.shinyspoon.link)
+- ~~[Website](https://ss.shinyspoon.link)~~
 - [Api Repo](https://github.com/ary-na/shiny-spoon-api)
 - [Lambda Function Repo](https://github.com/ary-na/shiny-spoon-lambda-function)
 
